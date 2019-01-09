@@ -1,2 +1,4 @@
 # create-react-app
-Create React app with Analytics.js
+
+This is a blank template for create-react-app
+

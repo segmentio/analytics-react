@@ -1,33 +1,32 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { withRouter } from 'react-router-dom';
+import Header from './Header';
+import Main from './Main';
 import './App.css';
 
 class App extends Component {
+  componentDidMount() {
+    window.analytics.page(window.location.pathname);
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.location.pathname !== prevProps.location.pathname) {
+      window.analytics.page(this.props.location.pathname);
+    }
+  }
+
   trackClickEvent(event) {
     window.analytics.track(event);
   }
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => this.trackClickEvent('Clicked Learn React Link')}
-          >
-            Learn React
-          </a>
-        </header>
+      <div className="app">
+        <Header />
+        <Main trackClickEvent={this.trackClickEvent} />
       </div>
     );
   }
 }
 
-export default App;
+export default withRouter(props => <App {...props} />);

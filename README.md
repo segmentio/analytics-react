@@ -60,7 +60,6 @@ Once you've added a few track calls, <b>you're done</b>! You successfully instal
 <script type="text/javascript">
   !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t,e){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src="https://cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.1.0";
   analytics.load("YOUR_WRITE_KEY");
-  analytics.page();
   }}();
 </script>
 ```
@@ -71,7 +70,26 @@ npm install
 npm start
 ```
 
-3. View the live events being triggered in your Segment dashboard debugger. You should see the page view and the `Clicked Learn React Link` event when clicked.
+3. View the live events being triggered in your Segment dashboard debugger:
+    + Page event: `/`
+    + Page event: `/about`
+    + Track event: `Clicked Learn React Link`
+
+## 🥇 Best Practices
+When working with SPAs, clicking a link or a new tab will not reload the webpage. Thus, using `analytics.page()` in `index.html` is not ideal and we need to simulate a page load. Nonetheless, this is easy with the use of [react-router](https://reacttraining.com/react-router) and React's lifecycle methods.
+
+Using the `withRouter` higher-order component, we can get access to the `location` props when the wrapped component renders. When the component renders, we can use the following lifecycle methods to invoke our `page` calls:
+```javascript
+componentDidMount() {
+  window.analytics.page(window.location.pathname);
+}
+
+componentDidUpdate(prevProps) {
+  if (this.props.location.pathname !== prevProps.location.pathname) {
+    window.analytics.page(this.props.location.pathname);
+  }
+}
+```
 
 ## 🤔 What's Next?
 Check out our full <a href="https://segment.com/docs/sources/website/analytics.js/">Analytics.js reference</a> to see what else is possible, or read about the <a href="https://segment.com/docs/sources/server/http/">Tracking API methods</a> to get a sense for the bigger picture.

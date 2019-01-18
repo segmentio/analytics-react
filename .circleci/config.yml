@@ -1,31 +1,11 @@
 version: 2
 jobs:
   build:
-    working_directory: /go/src/github.com/segmentio/analytics.js-react-quickstart
+    working_directory: ~/analytics.js-react-quickstart
     docker:
-      - image: circleci/golang:1.11
+      - image: circleci/node:8.11
     steps:
       - checkout
-      - run:
-          name: Install Dependencies
-          command: |
-            make deps
-      - run:
-          name: Tests
-          command: |
-            make test
-      - run:
-          name: Build
-          command: |
-            make build
-      - run:
-          name: Publish Code
-          command: |
-            make publish
-
-workflows:
-  version: 2
-  build:
-    jobs:
-      - build:
-          context: segmentio-org-global
+      - run: npm install
+      - run: npm test
+      - run: npm run build

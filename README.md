@@ -60,8 +60,8 @@ If you're using a form to handle user signups or logins, the `onSubmit` handler 
 ```javascript
 export default class Identify extends Component {
   state = {
-	name: '',
-	email: ''
+    name: '',
+    email: ''
   };
 
   handleChange(event) {
@@ -71,8 +71,8 @@ export default class Identify extends Component {
   onIdentifySubmit() {
     window.analytics.identify({
       name: this.state.name,
-	  email: this.state.email
-	});
+      email: this.state.email
+    });
   }
 
   render() {
@@ -82,7 +82,7 @@ export default class Identify extends Component {
         <input value={this.state.email} type="text" onChange={this.handleChange} /> 
         <input type="submit" />
       </form>
-   )
+    )
  }
 }
 ```
@@ -120,7 +120,7 @@ export default class Track extends Component {
 ```
 
 ### Error Boundary
-Using a component to wrap around children components can be useful for catching errors. Usually when an error occurs, we like to call `track` and log exactly what happened:
+Using a higher-order component to wrap around children components can be useful for catching errors. Usually when an error occurs, we like to call `track` and gracefully display the appropriate child component:
 
 ```javascript
 export default class ErrorBoundary extends Component {
@@ -148,8 +148,8 @@ export default class ErrorBoundary extends Component {
     });
 
     window.analytics.track({
-	  error: this.state.error,
-	  errorInfo: this.state.errorInfo
+      error: this.state.error,
+      errorInfo: this.state.errorInfo
     });
   }
 

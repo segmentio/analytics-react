@@ -11,7 +11,7 @@ class App extends Component {
 
   componentDidUpdate(prevProps) {
     if (this.props.location.pathname !== prevProps.location.pathname) {
-      window.analytics.page(this.props.location.pathname);
+      window.analytics.page(window.location.pathname);
     }
   }
 

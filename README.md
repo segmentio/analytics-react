@@ -4,8 +4,6 @@
 
 This tutorial will help you start sending data from your React application to Segment and any of our destinations, using our <a href="https://segment.com/docs/sources/website/analytics.js/">Analytics.js library</a>. As soon as you're setup you'll be able to turn on any new destinations with the flip of a switch!
 
-Want to try it for yourself? Scroll down to the <a href="#demo">demo section</a> and run the app!
-
 <p align="center">
   <img src="https://user-images.githubusercontent.com/16131737/51461953-45da5a00-1d14-11e9-8727-97890d84d13c.gif"/>
 </p>

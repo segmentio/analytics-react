@@ -1,6 +1,6 @@
 {
-  "name": "analytics.js-react-quickstart",
-  "description": "Quickstart guide for Analytics.js + React",
+  "name": "analytics-react",
+  "description": "Quickstart guide for Analytics.js + React.js",
   "version": "1.0.0",
   "contributors": [
     "William Grosset (https://williamgrosset.com)"
@@ -11,7 +11,7 @@
     "segment",
     "analytics"
   ],
-  "repository": "segmentio/analytics.js-react-quickstart",
+  "repository": "segmentio/analytics-react",
   "private": true,
   "scripts": {
     "start": "react-scripts start",

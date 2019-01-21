@@ -104,7 +104,7 @@ window.analytics.track('Article Bookmarked', {
 That's telling us that your user just triggered the <b>Article Bookmarked</b> event and bookmarked the `Snow Fall` article authored by `John Branch`. Properties can be anything you want to associate to an event when it is tracked.
 
 ### Event Handler
-Event handlers are oftenly used to call `track`, such as: `onClick`, `onSubmit`, `onMouseOver`, `etc.`:
+[Event handlers](https://reactjs.org/docs/handling-events.html) are oftenly used to call `track`, such as: `onClick`, `onSubmit`, `onMouseOver`, `etc.`:
 
 ```javascript
 export default class Track extends Component {

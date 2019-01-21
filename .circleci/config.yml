@@ -1,7 +1,7 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/analytics.js-react-quickstart
+    working_directory: ~/analytics-react
     docker:
       - image: circleci/node:8.11
     steps:

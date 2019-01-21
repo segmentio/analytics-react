@@ -26,7 +26,8 @@ Now `window.analytics` is loaded and available to use throughout your app!
 ###  Single-Page Application
 Clicking a link or a new tab will not reload the webpage in an SPA. Thus, using `analytics.page()` in `index.html` is not ideal and we need to simulate a page load. We can do this with the use of [react-router](https://reacttraining.com/react-router) and React's lifecycle methods. **Important**: Remember to remove `analytics.page()` from the snippet!
 
-Using the `withRouter` higher-order component, we can get access to the `location` props when the wrapped component renders. When the component renders, we can use `componentDidMount()` and/or `componentDidUpdate()` to invoke our `page` calls:
+Using the `withRouter` higher-order component, we can get access to the `location` props when the wrapped component renders. When the component renders, we can use `componentDidMount`/`componentDidUpdate` to invoke our `page` calls:
+
 ```javascript
 componentDidMount() {
   window.analytics.page(window.location.pathname);
@@ -113,10 +114,33 @@ export default class Track extends Component {
 
   render() {
     return (
-      <button onClick={this.trackClickEvent}>Hello World</button>
+      <button onClick={this.trackClickEvent}>
+        Hello World
+      </button>
     );
   }
 }
+```
+
+### Lifecyle Methods
+[Lifecycle methods](https://reactjs.org/docs/react-component.html#the-component-lifecycle) are also great use cases for tracking particular events. For example, if you want to track components that are conditionally rendered from a parent component and that are outside the scope of a `page` call, then you can use `componentDidMount` to trigger a `track` event:
+
+```javascript
+export default class Panel extends Component {
+  componentDidMount() {
+    window.analytics.track('Viewed Panel');
+  }
+
+  render() {
+    return (
+      <div className="panel">
+        <div className="panel-body">
+          A basic panel.
+        </div>
+      </div>
+    )
+  }
+};
 ```
 
 ### Error Boundary

@@ -24,7 +24,7 @@ Installing Segment is easy, just paste this snippet into the head of your site. 
 Now `window.analytics` is loaded and available to use throughout your app!
 
 ###  Single-Page Application
-Clicking a link or a new tab will not reload the webpage in an SPA. Thus, using `analytics.page()` in `index.html` is not ideal and we need to simulate a page load. We can do this with the use of [react-router](https://reacttraining.com/react-router) and React's lifecycle methods. **Important**: Remember to remove `analytics.page()` from the snippet!
+Clicking a link or a new tab will not reload the webpage in an SPA. Therefore, using `analytics.page()` in `index.html` is not ideal and we need to simulate a page load. However, we can achieve `page` calls with the use of [react-router](https://reacttraining.com/react-router) and React's lifecycle methods. **Important**: Remember to remove `analytics.page()` from the snippet!
 
 Using the `withRouter` higher-order component, we can get access to the `location` props when the wrapped component renders. When the component renders, we can use `componentDidMount`/`componentDidUpdate` to invoke our `page` calls:
 
@@ -89,7 +89,7 @@ export default class Identify extends Component {
 ```
 
 ## ⏰ Step 3: Track Actions
-The `track` method is how you tell Segment about which actions your users are performing on your site. Every action triggers what we call an "event", which can also have associated properties. You can read more about `track` in the <a href="https://segment.com/docs/sources/website/analytics.js/#track">track reference</a>.
+The `track` method is how you tell Segment about which actions your users are performing on your site. Every action triggers what we call an "event", which can also have associated properties. It is important to figure out exactly what events you want to `track` instead of tracking anything and everything. You can read more about `track` in the <a href="https://segment.com/docs/sources/website/analytics.js/#track">track reference</a>.
 
 Here's what a call to `track` might look like when a user bookmarks an article:
 
@@ -144,7 +144,7 @@ export default class Panel extends Component {
 ```
 
 ### Error Boundary
-Using a higher-order component to wrap around children components can be useful for catching errors. Usually when an error occurs, we like to call `track` and gracefully display the appropriate child component:
+Using a higher-order component to wrap around children components can be useful for catching errors. Usually when an error occurs, we will log the error with `track` and gracefully display the appropriate child component:
 
 ```javascript
 export default class ErrorBoundary extends Component {
@@ -216,8 +216,6 @@ npm start
     + Track event: `Clicked Learn React Link`
 
 # 🤔 What's Next?
-Check out our full <a href="https://segment.com/docs/sources/website/analytics.js/">Analytics.js reference</a> to see what else is possible, or read about the <a href="https://segment.com/docs/sources/server/http/">Tracking API methods</a> to get a sense for the bigger picture.
-
 Interested in allowing your visitors to control and customize their tracking preferences on a website? Integrate our [consent-manager](https://github.com/segmentio/consent-manager), which is imported via the snippet and uses our pre-built React component under the hood.
 
-If you have any questions, or see anywhere we can improve our documentation, <a href="https://segment.com/contact/">please let us know</a>!
+Check out our full <a href="https://segment.com/docs/sources/website/analytics.js/">Analytics.js reference</a> to see what else is possible, or read about the <a href="https://segment.com/docs/sources/server/http/">Tracking API methods</a> to get a sense for the bigger picture. If you have any questions, or see anywhere we can improve our documentation, <a href="https://segment.com/contact/">please let us know</a>!

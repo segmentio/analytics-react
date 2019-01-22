@@ -25,7 +25,7 @@ Now `window.analytics` is loaded and available to use throughout your app!
 ###  Single-Page Application
 Clicking a link or a new tab will not reload the webpage in an SPA. Therefore, using `analytics.page()` in `index.html` is not ideal and we need to simulate a page load. However, we can achieve `page` calls with the use of [react-router](https://reacttraining.com/react-router) and React's lifecycle methods.
 
-If we seperate our pages into their own components and allow the `<Route />` component to handle when our pages render, we can use `componentDidMount` to invoke our `page` calls:
+If we seperate our pages into their own components and allow the [`<Route />`](https://reacttraining.com/react-router/core/api/Route) component to handle when our pages render, then we can use `componentDidMount` to invoke our `page` calls:
 
 ```javascript
 export default class HomePage extends Component {

@@ -7,7 +7,7 @@ This tutorial will help you start sending data from your React application to Se
 Want to try it for yourself? Scroll down to the <a href="#demo">demo section</a> and run the app!
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/16131737/51461953-45da5a00-1d14-11e9-8727-97890d84d13c.gif"/>
+  <img src="https://user-images.githubusercontent.com/16131737/51504924-85e32080-1d98-11e9-8055-8547e8a3fc53.gif"/>
 </p>
 
 # 🔌 Installation

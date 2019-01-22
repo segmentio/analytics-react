@@ -17,25 +17,28 @@ Installing Segment is easy, just paste this snippet into the head of your site. 
 <script type="text/javascript">
   !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t,e){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src="https://cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.1.0";
   analytics.load("YOUR_WRITE_KEY");
-  analytics.page();
   }}();
 </script>
 ```
 Now `window.analytics` is loaded and available to use throughout your app!
 
 ###  Single-Page Application
-Clicking a link or a new tab will not reload the webpage in an SPA. Therefore, using `analytics.page()` in `index.html` is not ideal and we need to simulate a page load. However, we can achieve `page` calls with the use of [react-router](https://reacttraining.com/react-router) and React's lifecycle methods. **Important**: Remember to remove `analytics.page()` from the snippet!
+Clicking a link or a new tab will not reload the webpage in an SPA. Therefore, using `analytics.page()` in `index.html` is not ideal and we need to simulate a page load. However, we can achieve `page` calls with the use of [react-router](https://reacttraining.com/react-router) and React's lifecycle methods.
 
-Using the `withRouter` higher-order component, we can get access to the `location` props when the wrapped component renders. When the component renders, we can use `componentDidMount`/`componentDidUpdate` to invoke our `page` calls:
+If we seperate our pages into their own components and allow the [`<Route />`](https://reacttraining.com/react-router/core/api/Route) component to handle when our pages render, then we can use `componentDidMount` to invoke our `page` calls:
 
 ```javascript
-componentDidMount() {
-  window.analytics.page(window.location.pathname);
-}
+export default class HomePage extends Component {
+  componentDidMount() {
+    window.analytics.page('Home');
+  }
 
-componentDidUpdate(prevProps) {
-  if (this.props.location.pathname !== prevProps.location.pathname) {
-    window.analytics.page(window.location.pathname);
+  render() {
+    return (
+      <h2>
+        Home
+      </h2>
+    );
   }
 }
 ```
@@ -59,7 +62,7 @@ That's identifying Michael by his unique User ID and labeling him with `name` an
 ### Event Handler
 If you're using a form to handle user signups or logins, the `onSubmit` handler is a great use-case to call `identify`:
 ```javascript
-export default class Identify extends Component {
+export default class IdentifyForm extends Component {
   state = {
     name: '',
     email: ''
@@ -70,6 +73,7 @@ export default class Identify extends Component {
   }
 
   onIdentifySubmit() {
+    // Add your own unique ID here or we will automatically assign an anonymousID
     window.analytics.identify({
       name: this.state.name,
       email: this.state.email
@@ -104,18 +108,18 @@ window.analytics.track('Article Bookmarked', {
 That's telling us that your user just triggered the <b>Article Bookmarked</b> event and bookmarked the `Snow Fall` article authored by `John Branch`. Properties can be anything you want to associate to an event when it is tracked.
 
 ### Event Handler
-[Event handlers](https://reactjs.org/docs/handling-events.html) are oftenly used to call `track`, such as: `onClick`, `onSubmit`, `onMouseOver`, `etc.`:
+[Event handlers](https://reactjs.org/docs/handling-events.html) are oftenly used to call `track`, such as: `onClick`, `onSubmit`, `onMouseOver`:
 
 ```javascript
-export default class Track extends Component {
+export default class Button extends Component {
   trackClickEvent() {
-    window.analytics.track('Clicked Hello World Button');
+    window.analytics.track('Clicked Button');
   }
 
   render() {
     return (
       <button onClick={this.trackClickEvent}>
-        Hello World
+        Button 
       </button>
     );
   }
@@ -134,9 +138,7 @@ export default class Panel extends Component {
   render() {
     return (
       <div className="panel">
-        <div className="panel-body">
-          A basic panel.
-        </div>
+        Panel
       </div>
     )
   }
@@ -211,8 +213,8 @@ npm start
 ```
 
 3. View the live events being triggered in your Segment dashboard debugger:
-    + Page event: `/`
-    + Page event: `/about`
+    + Page event: `Home`
+    + Page event: `About`
     + Track event: `Clicked Learn React Link`
 
 # 🤔 What's Next?

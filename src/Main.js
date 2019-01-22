@@ -1,15 +1,14 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
+import Home from './Home';
+import About from './About';
 import logo from './logo.svg';
 import './Main.css';
-
-const Index = () => <h2>Home</h2>;
-const About = () => <h2>About</h2>;
 
 const Main = ({ trackClickEvent }) => (
   <div>
     <Switch>
-      <Route exact path="/" component={Index} />
+      <Route exact path="/" component={Home} />
       <Route path="/about" component={About} />
     </Switch>
     <div>

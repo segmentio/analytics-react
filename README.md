@@ -173,7 +173,7 @@ export default class ErrorBoundary extends Component {
       errorInfo
     });
 
-    window.analytics.track({
+    window.analytics.track('JavaScript Error', {
       error: this.state.error,
       errorInfo: this.state.errorInfo
     });

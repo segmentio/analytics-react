@@ -126,7 +126,7 @@ export default class Button extends Component {
 }
 ```
 
-### Lifecyle Methods
+### Lifecycle Method
 [Lifecycle methods](https://reactjs.org/docs/react-component.html#the-component-lifecycle) are also great use cases for tracking particular events. For example, if you want to track components that are conditionally rendered from a parent component and that are outside the scope of a `page` call, then you can use `componentDidMount` to trigger a `track` event:
 
 ```javascript

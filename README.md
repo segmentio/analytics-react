@@ -81,18 +81,22 @@ export default class IdentifyForm extends Component {
   }
 
   onIdentifySubmit() {
+    const { name, email } = this.state;
+
     // Add your own unique ID here or we will automatically assign an anonymousID
     window.analytics.identify({
-      name: this.state.name,
-      email: this.state.email
+      name,
+      email
     });
   }
 
   render() {
+    const { name, email } = this.state;
+
     return (
       <form onSubmit={this.onIdentifySubmit}>
-        <input value={this.state.name} type="text" onChange={this.handleChange} />
-        <input value={this.state.email} type="text" onChange={this.handleChange} /> 
+        <input value={name} type="text" onChange={this.handleChange} />
+        <input value={email} type="text" onChange={this.handleChange} /> 
         <input type="submit" />
       </form>
     )
@@ -176,27 +180,30 @@ export default class ErrorBoundary extends Component {
   };
 
   componentDidCatch(error, errorInfo) {
+    const { error, errorInfo } = this.state;
+
     this.setState({
       error,
       errorInfo
     });
 
     window.analytics.track('JavaScript Error', {
-      error: this.state.error,
-      errorInfo: this.state.errorInfo
+      error,
+      errorInfo
     });
   }
 
   render() {
-    const ErrorComponent = this.props.errorComponent;
+    const { error, errorInfo } = this.state;
+    const { ErrorComponent, children } = this.props;
 
-    return this.state.error ? (
+    return error ? (
       <ErrorComponent
-        error={this.state.error}
-        errorInfo={this.state.errorInfo}
+        error={error}
+        errorInfo={errorInfo}
       />
     ) : (
-      this.props.children
+      children
     );
   }
 }
@@ -234,7 +241,9 @@ export default class User extends Component {
   }
 
   render() {
-    return this.props.children;
+    const { children } = this.props;
+
+    return children;
   }
 }
 ```

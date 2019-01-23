@@ -2,7 +2,7 @@
   <img src="https://user-images.githubusercontent.com/658544/51635694-49383600-1f0c-11e9-804a-973e4792cac8.png"/>
 </div>
 
-_You can't fix what you can't measure._ Analytics helps you understand your product, your users, and your business. It helps you understand your app's funnel, your core metrics, and your product market fit. Here's how: 
+_You can't fix what you can't measure._ Analytics helps you understand your product, users, and business. Also, it helps you understand your app's funnel, core metrics, and product market fit. Here's **how**:
 
 1. **Collect analytics data** from your app(s). _Tip: The top 200 Segment companies collect data from 5+ source types (web, mobile, server, crm, ..)._
 2. **Send the data to 1+ analytics tools** (like Google Analytics, Amplitude, Mixpanel, etc..). _Tip: The top 200 Segment companies send data to 8 destination categories (analytics, warehouse, s3, email, session recording, remarketing, ..)._
@@ -119,15 +119,15 @@ That's telling us that your user just triggered the <b>Article Bookmarked</b> ev
 [Event handlers](https://reactjs.org/docs/handling-events.html) are oftenly used to call `track`, such as: `onClick`, `onSubmit`, `onMouseOver`:
 
 ```javascript
-export default class Button extends Component {
+export default class Signup extends Component {
   trackClickEvent() {
-    window.analytics.track('Clicked Button');
+    window.analytics.track('User Signup');
   }
 
   render() {
     return (
       <button onClick={this.trackClickEvent}>
-        Button 
+        Signup with Segment today!
       </button>
     );
   }
@@ -138,16 +138,16 @@ export default class Button extends Component {
 [Lifecycle methods](https://reactjs.org/docs/react-component.html#the-component-lifecycle) are also great use cases for tracking particular events. For example, if you want to track components that are conditionally rendered from a parent component and that are outside the scope of a `page` call, then you can use `componentDidMount` to trigger a `track` event:
 
 ```javascript
-export default class Panel extends Component {
+export default class VideoPlayer extends Component {
   componentDidMount() {
-    window.analytics.track('Viewed Panel');
+    window.analytics.track('Video Played');
   }
 
   render() {
     return (
-      <div className="panel">
-        Panel
-      </div>
+      <video class="video-container" autoplay>
+        <source src="https://www.youtube.com/watch?v=dQw4w9WgXcQ" type="video/mp4">
+      </video>
     )
   }
 }

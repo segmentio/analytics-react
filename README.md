@@ -1,6 +1,14 @@
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/16131737/51462823-7622f800-1d16-11e9-94a2-85fb1305b7bf.png"/>
+  <img src="https://user-images.githubusercontent.com/658544/51635694-49383600-1f0c-11e9-804a-973e4792cac8.png"/>
 </div>
+
+_You can't fix what you can't measure._ Analytics helps you understand your product, your users, and your business. It helps you understand your app's funnel, your core metrics, and your product market fit. Here's how: 
+
+1. **Collect analytics data** from your app(s). _Tip: The top 200 Segment companies collect data from 5+ source types (web, mobile, server, crm, ..)._
+2. **Send the data to 1+ analytics tools** (like Google Analytics, Amplitude, Mixpanel, etc..). _Tip: The top 200 Segment companies send data to 8 destination categories (analytics, warehouse, s3, email, session recording, remarketing, ..)._
+3. **Explore your data** by creating metrics (like new signups, retention cohorts, and revenue). _Tip: Retention cohorts are the best way of measuring product market fit. Netflix has 70% paid retention after 12 months, 30% after 7 years._
+
+Segment collects analytics data and sends it to 250+ apps with the flip of a switch (e.g. Google Analytics, Mixpanel, Optimizely, Facebook Ads, Slack, Sentry, and many more...). You only need one snippet and you can turn integrations on and off whenever you want with no additional code.
 
 This tutorial will help you start sending data from your React application to Segment and any of our destinations, using our <a href="https://segment.com/docs/sources/website/analytics.js/">Analytics.js library</a>. As soon as you're setup you'll be able to turn on any new destinations with the flip of a switch!
 

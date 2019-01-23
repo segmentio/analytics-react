@@ -142,7 +142,7 @@ export default class Panel extends Component {
       </div>
     )
   }
-};
+}
 ```
 
 ### Error Boundary
@@ -195,6 +195,41 @@ export default class ErrorBoundary extends Component {
 ```
 
 Once you've added a few track calls, **you're done**! You successfully installed `Analytics.js` tracking. Now you're ready to turn on any destination you fancy from our interface. 🎉
+
+## 🎓 Advanced
+### Typecheck
+Typechecking with [`prop-types`](https://reactjs.org/docs/typechecking-with-proptypes.html) can catch a lot of potential bugs and prevent handing down information in the wrong format. For example, enforcing a format for `user` related objects can help with data standardization. You can get creative with what traits you expect to be sent to Segment for `identify` and `track`:
+
+```javascript
+export default class User extends Component {
+  static propTypes = {
+    id: PropTypes.string,
+    identifyTraits: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      email: PropTypes.string.isRequired,
+      isAuthorized: PropTypes.bool.isRequired
+    }),
+    trackTitle: PropTypes.string,
+    trackTraits: PropTypes.object
+  };
+
+  identify() {
+    const { id, identifyTraits } = this.props;
+
+    window.analytics.identify(id, identifyTraits);
+  }
+
+  track() {
+    const { trackTitle, trackTraits } = this.props;
+
+    window.analytics.track(trackTitle, trackTraits);
+  }
+
+  render() {
+    return this.props.children;
+  }
+}
+```
 
 # 📺 <span name="demo">Demo</span>
 1. Add your Segment <b>Write Key</b>, which you can find in your project setup guide or settings, to the snippet in <a href="https://github.com/segmentio/analytics-react/blob/master/public/index.html#L28">index.html</a>:

@@ -43,9 +43,9 @@ export default class HomePage extends Component {
 
   render() {
     return (
-      <h2>
+      <h1>
         Home
-      </h2>
+      </h1>
     );
   }
 }
@@ -145,7 +145,7 @@ export default class VideoPlayer extends Component {
 
   render() {
     return (
-      <video class="video-container" autoplay>
+      <video autoplay>
         <source src="https://www.youtube.com/watch?v=dQw4w9WgXcQ" type="video/mp4">
       </video>
     )
@@ -258,7 +258,7 @@ npm start
 3. View the live events being triggered in your Segment dashboard debugger:
     + Page event: `Home`
     + Page event: `About`
-    + Track event: `Clicked Learn React Link`
+    + Track event: `Learn React Link Clicked`
 
 # 🤔 What's Next?
 Interested in allowing your visitors to control and customize their tracking preferences on a website? Integrate our [consent-manager](https://github.com/segmentio/consent-manager), which is imported via the snippet and uses our pre-built React component under the hood.

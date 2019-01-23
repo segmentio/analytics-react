@@ -20,7 +20,7 @@ const Main = ({ trackClickEvent }) => (
         href="https://reactjs.org"
         target="_blank"
         rel="noopener noreferrer"
-        onClick={() => trackClickEvent('Clicked Learn React Link')}
+        onClick={() => trackClickEvent('Learn React Link Clicked')}
       >
         Learn React
       </a>

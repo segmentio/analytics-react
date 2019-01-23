@@ -95,11 +95,11 @@ export default class IdentifyForm extends Component {
 
     return (
       <form onSubmit={this.onIdentifySubmit}>
-        <input value={name} type="text" onChange={this.handleChange} />
-        <input value={email} type="text" onChange={this.handleChange} /> 
+        <input name="name" type="text" value={name} onChange={this.handleChange} />
+        <input name="email" type="text" value={email} onChange={this.handleChange} />
         <input type="submit" />
       </form>
-    )
+    );
  }
 }
 ```
@@ -152,7 +152,7 @@ export default class VideoPlayer extends Component {
       <video autoplay>
         <source src="https://www.youtube.com/watch?v=dQw4w9WgXcQ" type="video/mp4">
       </video>
-    )
+    );
   }
 }
 ```
@@ -213,7 +213,7 @@ Once you've added a few track calls, **you're done**! You successfully installed
 
 ## 🎓 Advanced
 ### Typecheck
-Typechecking with [`prop-types`](https://reactjs.org/docs/typechecking-with-proptypes.html) can catch a lot of potential bugs and prevent handing down information in the wrong format. For example, enforcing a format for `user` related objects can help with data standardization. You can get creative with what traits you expect to be sent to Segment for `identify` and `track`:
+Typechecking with [`prop-types`](https://reactjs.org/docs/typechecking-with-proptypes.html) can catch a lot of potential bugs and prevent handing down information in the wrong format. For example, enforcing a format for `user` related objects can help with data standardization. You can get creative with the traits you expect to be sent to Segment for `identify` and `track`:
 
 ```javascript
 export default class User extends Component {

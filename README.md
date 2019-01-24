@@ -96,7 +96,7 @@ export default class IdentifyForm extends Component {
     return (
       <form onSubmit={this.onIdentifySubmit}>
         <input name="name" type="text" value={name} onChange={this.handleChange} />
-        <input name="email" type="text" value={email} onChange={this.handleChange} />
+        <input name="email" type="email" value={email} onChange={this.handleChange} />
         <input type="submit" />
       </form>
     );
@@ -123,7 +123,7 @@ That's telling us that your user just triggered the <b>Article Bookmarked</b> ev
 [Event handlers](https://reactjs.org/docs/handling-events.html) are oftenly used to call `track`, such as: `onClick`, `onSubmit`, `onMouseOver`, `etc.`:
 
 ```javascript
-export default class Signup extends Component {
+export default class SignupButton extends Component {
   trackClickEvent() {
     window.analytics.track('User Signup');
   }
@@ -195,7 +195,7 @@ export default class ErrorBoundary extends Component {
 
   render() {
     const { error, errorInfo } = this.state;
-    const { ErrorComponent, children } = this.props;
+    const { errorComponent: ErrorComponent, children } = this.props;
 
     return error ? (
       <ErrorComponent

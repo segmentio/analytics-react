@@ -4,11 +4,11 @@
 
 _You can't fix what you can't measure._ Analytics helps you understand your product, users, and business. Also, it helps you understand your app's funnel, core metrics, and product market fit. Here's **how**:
 
-1. **Collect analytics data** from your app(s). _Tip: The top 200 Segment companies collect data from 5+ source types (web, mobile, server, crm, ..)._
-2. **Send the data to 1+ analytics tools** (like Google Analytics, Amplitude, Mixpanel, etc..). _Tip: The top 200 Segment companies send data to 8 destination categories (analytics, warehouse, s3, email, session recording, remarketing, ..)._
+1. **Collect analytics data** from your app(s). _Tip: The top 200 Segment companies collect data from 5+ source types (web, mobile, server, crm, ...)._
+2. **Send the data to 1+ analytics tools** (like Google Analytics, Amplitude, Mixpanel, etc..). _Tip: The top 200 Segment companies send data to 8 destination categories (analytics, warehouse, s3, email, session recording, remarketing, ...)._
 3. **Explore your data** by creating metrics (like new signups, retention cohorts, and revenue). _Tip: Retention cohorts are the best way of measuring product market fit. Netflix has 70% paid retention after 12 months, 30% after 7 years._
 
-Segment collects analytics data and sends it to 250+ apps with the flip of a switch (e.g. Google Analytics, Mixpanel, Optimizely, Facebook Ads, Slack, Sentry, and many more...). You only need one snippet and you can turn integrations on and off whenever you want with no additional code.
+Segment collects analytics data and sends it to 250+ apps with the flip of a switch (e.g. Google Analytics, Mixpanel, Optimizely, Facebook Ads, Slack, Sentry, and more...). You only need one snippet and you can turn integrations on and off whenever you want with no additional code.
 
 This tutorial will help you start sending data from your React application to Segment and any of our destinations, using our <a href="https://segment.com/docs/sources/website/analytics.js/">Analytics.js library</a>. As soon as you're setup you'll be able to turn on any new destinations with the flip of a switch!
 
@@ -44,7 +44,7 @@ export default class HomePage extends Component {
   render() {
     return (
       <h1>
-        Home
+        Home page.
       </h1>
     );
   }
@@ -120,7 +120,7 @@ window.analytics.track('Article Bookmarked', {
 That's telling us that your user just triggered the <b>Article Bookmarked</b> event and bookmarked the `Snow Fall` article authored by `John Branch`. Properties can be anything you want to associate to an event when it is tracked.
 
 ### Event Handler
-[Event handlers](https://reactjs.org/docs/handling-events.html) are oftenly used to call `track`, such as: `onClick`, `onSubmit`, `onMouseOver`:
+[Event handlers](https://reactjs.org/docs/handling-events.html) are oftenly used to call `track`, such as: `onClick`, `onSubmit`, `onMouseOver`, `etc.`:
 
 ```javascript
 export default class Signup extends Component {
@@ -144,7 +144,7 @@ export default class Signup extends Component {
 ```javascript
 export default class VideoPlayer extends Component {
   componentDidMount() {
-    window.analytics.track('Video Played');
+    window.analytics.track('Video Watched');
   }
 
   render() {

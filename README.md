@@ -144,7 +144,7 @@ export default class Signup extends Component {
 ```javascript
 export default class VideoPlayer extends Component {
   componentDidMount() {
-    window.analytics.track('Video Watched');
+    window.analytics.track('Video Played');
   }
 
   render() {

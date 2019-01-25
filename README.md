@@ -2,13 +2,26 @@
   <img src="https://user-images.githubusercontent.com/658544/51635694-49383600-1f0c-11e9-804a-973e4792cac8.png"/>
 </div>
 
-_You can't fix what you can't measure._ Analytics helps you understand your product, users, and business. Also, it helps you understand your app's funnel, core metrics, and product market fit. Here's **how**:
+_You can't fix what you can't measure._ Analytics helps you understand your product, users, and business. Also, it helps you understand your app's funnel, core metrics, and product market fit. 
 
-1. **Collect analytics data** from your app(s). _Tip: The top 200 Segment companies collect data from 5+ source types (web, mobile, server, crm, ...)._
-2. **Send the data to 1+ analytics tools** (like Google Analytics, Amplitude, Mixpanel, etc..). _Tip: The top 200 Segment companies send data to 8 destination categories (analytics, warehouse, s3, email, session recording, remarketing, ...)._
-3. **Explore your data** by creating metrics (like new signups, retention cohorts, and revenue). _Tip: Retention cohorts are the best way of measuring product market fit. Netflix has 70% paid retention after 12 months, 30% after 7 years._
+Here's **how**:
+
+1. **Collect analytics data** from your app(s). — _Stat: The top 200 Segment companies collect data from 5+ source types (web, mobile, server, crm, ...)._
+2. **Send the data to 1+ analytics tools** (like Google Analytics, Amplitude, Mixpanel, etc..). — _Stat: The top 200 Segment companies send data to 8 destination categories (analytics, warehouse, s3, email, session recording, remarketing, ...)._
+3. **Explore your data** by creating metrics (like new signups, retention cohorts, and revenue). — _Tip: Retention cohorts are the best way of measuring product market fit. Netflix has 70% paid retention after 12 months, 30% after 7 years._
 
 Segment collects analytics data and sends it to 250+ apps with the flip of a switch (e.g. Google Analytics, Mixpanel, Optimizely, Facebook Ads, Slack, Sentry, and more...). You only need one snippet and you can turn integrations on and off whenever you want with no additional code.
+
+## Why? 
+1. **Power all your analytics apps with the same data**. With Segment as your customer data hub, you can focus on building incredible products and attracting more customers. Instead of wasting time integrating all of your tools individually, track data to Segment once. We're the last integration you'll ever do. Try new apps with the flip of a switch.
+
+2. **Query your data in SQL**. Start playing with your data in ridiculous detail with Segment SQL. We'll transform and load your customer behavioral data directly from your websites and apps into Amazon Redshift, Google BigQuery, or Heroku Postgres. Save weeks of engineering time building a data warehouse and ETL pipeline.
+
+3. **Install tracking for the last time**. Our unified tracking code makes integrating new apps simple. You only need to instrument Segment once, then flip a switch to install new tools. Reduce all of your tracking code and advertising tags into a single API.
+
+4. **Send data from anywhere**.  Send Segment data from any device, then we’ll transform and send it on to any tool. We support browsers, phones, tablets, smart watches, TVs, iBeacons, and more!
+
+## Quickstart
 
 This tutorial will help you start sending data from your React application to Segment and any of our destinations, using our <a href="https://segment.com/docs/sources/website/analytics.js/">Analytics.js library</a>. As soon as you're setup you'll be able to turn on any new destinations with the flip of a switch!
 

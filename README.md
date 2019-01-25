@@ -18,7 +18,7 @@ Segment collects analytics data and sends it to 250+ apps with the flip of a swi
 2. **Query your data in SQL**. Start playing with your data in ridiculous detail with Segment SQL. We'll transform and load your customer behavioral data directly from your websites and apps into Amazon Redshift, Google BigQuery, or Heroku Postgres. Save weeks of engineering time building a data warehouse and ETL pipeline.	
 
 ```js
-analytics.initialize('writekey123') // web_prod
+analytics.load('writekey123') // web_prod
 analytics.track('Order Completed', { price: 99.84 })
 ```
 ```sql

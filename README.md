@@ -14,9 +14,9 @@ This tutorial will help you start sending data from your React application to Se
 
 Want to try it for yourself? Scroll down to the <a href="#demo">demo section</a> and run the app!
 
-<p align="center">
+<div align="center">
   <img src="https://user-images.githubusercontent.com/16131737/51644423-f0c16280-1f24-11e9-9d36-2c2ccfbeb0ec.gif"/>
-</p>
+</div>
 
 # 🔌 Installation
 ## ✂️ Step 1: Copy the Snippet
@@ -247,6 +247,13 @@ export default class User extends Component {
   }
 }
 ```
+
+## 💾 Warehouses
+A `warehouse` is a special subset of destinations where we load data to them in bulk at a regular interval, inserting and updating events and objects while automatically adjusting their schema to fit the data you’ve sent to Segment. We do the heavy lifting of capturing, schematizing, and loading your user data into your data `warehouse` of choice. `Warehouses` enable analysts and data engineers to shift focus from data cleansing and pipeline maintenance to providing insights for all of their business teams. Examples of data warehouses include Amazon Redshift, Google BigQuery, MySQL, and Postgres.
+
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/16131737/51726992-d23f9200-201e-11e9-8b68-608ebaaa6c65.gif"/>
+</div>
 
 # 📺 <span name="demo">Demo</span>
 1. Add your Segment <b>Write Key</b>, which you can find in your project setup guide or settings, to the snippet in <a href="https://github.com/segmentio/analytics-react/blob/master/public/index.html#L28">index.html</a>:

@@ -249,7 +249,9 @@ export default class User extends Component {
 ```
 
 ## 💾 Warehouses
-A `warehouse` is a special subset of destinations where we load data to them in bulk at a regular interval, inserting and updating events and objects while automatically adjusting their schema to fit the data you’ve sent to Segment. We do the heavy lifting of capturing, schematizing, and loading your user data into your data `warehouse` of choice. `Warehouses` enable analysts and data engineers to shift focus from data cleansing and pipeline maintenance to providing insights for all of their business teams. Examples of data warehouses include Amazon Redshift, Google BigQuery, MySQL, and Postgres.
+A `warehouse` is a special subset of destinations where we load data to them in bulk at a regular interval, inserting and updating events and objects while automatically adjusting their schema to fit the data you've sent to Segment. We do the heavy lifting of capturing, schematizing, and loading your user data into your data `warehouse` of choice.
+
+`Warehouses` enable analysts and data engineers to shift focus from data cleansing and pipeline maintenance to providing insights for all of their business teams. Examples of data warehouses include Amazon Redshift, Google BigQuery, MySQL, and Postgres.
 
 <div align="center">
   <img src="https://user-images.githubusercontent.com/16131737/51726992-d23f9200-201e-11e9-8b68-608ebaaa6c65.gif"/>

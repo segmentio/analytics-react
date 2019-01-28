@@ -36,8 +36,16 @@ This tutorial will help you start sending data from your React application to Se
 
 Want to try it for yourself? Scroll down to the <a href="#demo">demo section</a> and run the app!
 
+Start sending data from any **source** and see events live in the Segment **debugger**:
+
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/16131737/51644423-f0c16280-1f24-11e9-9d36-2c2ccfbeb0ec.gif"/>
+  <img src="https://user-images.githubusercontent.com/16131737/51859642-7a3daf80-22ec-11e9-9b15-3d85ec3151be.gif"/>
+</div>
+
+Once you have data being sent to Segment, forward this data to any of our 200+ **destinations**:
+
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/16131737/51859644-7b6edc80-22ec-11e9-8597-113a8b05ee07.gif"/>
 </div>
 
 # 🔌 Installation

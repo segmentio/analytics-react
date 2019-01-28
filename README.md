@@ -34,14 +34,14 @@ order by price desc
 
 This tutorial will help you start sending data from your React application to Segment and any of our destinations, using our <a href="https://segment.com/docs/sources/website/analytics.js/">Analytics.js library</a>. As soon as you're setup you'll be able to turn on any new destinations with the flip of a switch! Want to try it for yourself? Scroll down to the <a href="#demo">demo section</a> and run the app!
 
-Start sending data from any [**source**](https://segment.com/docs/guides/general/what-is-a-source) and see events live in the Segment **debugger**:
+Start sending data from any [source](https://segment.com/docs/guides/general/what-is-a-source) and see events live in the Segment **debugger**:
 
 <div align="center">
   <img src="https://user-images.githubusercontent.com/16131737/51859642-7a3daf80-22ec-11e9-9b15-3d85ec3151be.gif"/>
 </div>
 <br/>
 
-Once you have data being sent to Segment, forward this data to any of our 250+ [**destinations**](https://segment.com/docs/guides/general/what-is-a-destination):
+Once you have data being sent to Segment, forward this data to any of our 250+ [destinations](https://segment.com/docs/guides/general/what-is-a-destination):
 
 <div align="center">
   <img src="https://user-images.githubusercontent.com/16131737/51859644-7b6edc80-22ec-11e9-8597-113a8b05ee07.gif"/>

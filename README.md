@@ -39,7 +39,7 @@ Start sending data from any [**source**](https://segment.com/docs/guides/general
 <div align="center">
   <img src="https://user-images.githubusercontent.com/16131737/51859642-7a3daf80-22ec-11e9-9b15-3d85ec3151be.gif"/>
 </div>
-<br/><br/>
+<br/>
 
 Once you have data being sent to Segment, forward this data to any of our 250+ [**destinations**](https://segment.com/docs/guides/general/what-is-a-destination):
 

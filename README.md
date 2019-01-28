@@ -60,7 +60,7 @@ Installing Segment is easy, just paste this snippet into the head of your site. 
 Now `window.analytics` is loaded and available to use throughout your app!
 
 ###  Single-Page Application
-Clicking a link or a new tab will not reload the webpage in an SPA. Therefore, using `analytics.page()` in `index.html` is not ideal and we need to simulate a page load. However, we can achieve `page` calls with the use of [react-router](https://reacttraining.com/react-router) and React's lifecycle methods.
+The `page` method lets you record page views on your website, along with optional extra information about the page being viewed. You can read more about in the [page reference](https://segment.com/docs/sources/website/analytics.js/#page). Clicking a link or a new tab will not reload the webpage in an SPA. Therefore, using `analytics.page()` in `index.html` is not ideal and we need to simulate a page load. However, we can achieve `page` calls with the use of [react-router](https://reacttraining.com/react-router) and React's lifecycle methods.
 
 If we seperate our pages into their own components and allow the [`<Route />`](https://reacttraining.com/react-router/core/api/Route) component to handle when our pages render, then we can use `componentDidMount` to invoke our `page` calls:
 
@@ -109,7 +109,7 @@ export default class IdentifyForm extends Component {
     this.setState({ value: event.target.value });
   }
 
-  onIdentifySubmit() {
+  handleSubmit() {
     const { name, email } = this.state;
 
     // Add your own unique ID here or we will automatically assign an anonymousID
@@ -123,10 +123,10 @@ export default class IdentifyForm extends Component {
     const { name, email } = this.state;
 
     return (
-      <form onSubmit={this.onIdentifySubmit}>
+      <form onSubmit={this.handleSubmit}>
         <input name="name" type="text" value={name} onChange={this.handleChange} />
         <input name="email" type="email" value={email} onChange={this.handleChange} />
-        <input type="submit" />
+        <input type="submit" value="Submit" />
       </form>
     );
  }
@@ -153,13 +153,13 @@ That's telling us that your user just triggered the <b>Article Bookmarked</b> ev
 
 ```javascript
 export default class SignupButton extends Component {
-  trackClickEvent() {
+  trackEvent() {
     window.analytics.track('User Signup');
   }
 
   render() {
     return (
-      <button onClick={this.trackClickEvent}>
+      <button onClick={this.trackEvent}>
         Signup with Segment today!
       </button>
     );
@@ -238,7 +238,7 @@ export default class ErrorBoundary extends Component {
 }
 ```
 
-Once you've added a few track calls, **you're done**! You successfully installed `Analytics.js` tracking. Now you're ready to turn on any destination you fancy from our interface. 🎉
+Once you've added a few track calls, **you're done**! You successfully installed `Analytics.js` tracking. Now you're ready to turn on any destination from our interface. 🎉
 
 ## 🎓 Advanced
 ### Typecheck

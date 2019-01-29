@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import logo from './logo.svg';
 
 export default class Home extends Component {
   componentDidMount() {
@@ -7,7 +8,10 @@ export default class Home extends Component {
 
   render() {
     return (
-      <h2>Home</h2>
+      <div>
+        <h2>Home</h2>
+        <img src={logo} className="main-logo" alt="logo" />
+      </div>
     );
   }
 }

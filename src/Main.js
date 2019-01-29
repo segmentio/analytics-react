@@ -2,7 +2,6 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Home from './Home';
 import About from './About';
-import logo from './logo.svg';
 import './Main.css';
 
 const Main = ({ trackClickEvent }) => (
@@ -12,7 +11,6 @@ const Main = ({ trackClickEvent }) => (
       <Route path="/about" component={About} />
     </Switch>
     <div>
-      <img src={logo} className="main-logo" alt="logo" />
       <p>
         Edit <code>src/App.js</code> and save to reload.
       </p>

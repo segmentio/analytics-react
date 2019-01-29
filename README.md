@@ -40,7 +40,7 @@ This tutorial will help you start sending data from your React application to Se
 Start sending data from any [source](https://segment.com/docs/guides/general/what-is-a-source) and see events live in the Segment **debugger**:
 
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/16131737/51859642-7a3daf80-22ec-11e9-9b15-3d85ec3151be.gif"/>
+  <img src="https://user-images.githubusercontent.com/16131737/51933162-8a6d9180-23b5-11e9-909b-d7737591b09a.gif"/>
 </div>
 <br/>
 

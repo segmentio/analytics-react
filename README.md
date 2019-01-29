@@ -16,9 +16,9 @@ How to get **started**:
 Segment collects analytics data and sends it to 250+ apps with the flip of a switch (e.g. Google Analytics, Mixpanel, Optimizely, Facebook Ads, Slack, Sentry). You only need one snippet and you can turn integrations on and off whenever you want with no additional code.
 
 ## Why? 	
-1. **Power all your analytics apps with the same data**. With Segment as your customer data hub, you can focus on building incredible products and attracting more customers. Instead of wasting time integrating all of your tools individually, track data to Segment once. We're the last integration you'll ever do. Try new apps with the flip of a switch.	
+1. **Power all your analytics apps with the same data**. Instead of wasting time integrating all of your tools individually, track data to Segment once. We're the last integration you'll ever do.
 
-2. **Query your data in SQL**. Start playing with your data in ridiculous detail with Segment SQL. We'll transform and load your customer behavioral data directly from your websites and apps into Amazon Redshift, Google BigQuery, or Heroku Postgres. Save weeks of engineering time building a data warehouse and ETL pipeline.	
+2. **Query your data in SQL**. Play with your data in ridiculous detail with Segment SQL. We'll transform and load your customer behavioral data directly from your apps into Amazon Redshift, Google BigQuery, or Heroku Postgres. Save weeks of engineering time building a data warehouse and ETL pipeline.	
 
 ```js
 analytics.load('YOUR_WRITE_KEY') // web_prod
@@ -29,9 +29,9 @@ select * from web_prod.order_completed
 order by price desc
 ```
 
-3. **Install tracking for the last time**. Our unified tracking code makes integrating new apps simple. You only need to instrument Segment once. Reduce all of your tracking code and advertising tags into a single API.	
+3. **Install tracking for the last time**. You only need to instrument Segment once. Reduce all of your tracking code and advertising tags into a single API.	
 
-4. **Send data from anywhere**.  Send Segment data from any device, then we’ll transform and send it on to any tool. We support browsers, phones, tablets, smart watches, TVs, iBeacons, and more!
+4. **Send data from anywhere**.  Send Segment data from any device, then we’ll transform and send it on to any tool.
 
 ## Quickstart
 

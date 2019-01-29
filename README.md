@@ -31,7 +31,7 @@ order by price desc
 
 3. **Install tracking for the last time**. You only need to instrument Segment once. Reduce all of your tracking code and advertising tags into a single API.	
 
-4. **Send data from anywhere**.  Send Segment data from any device, then we’ll transform and send it on to any tool.
+4. **Send data from anywhere**.  Send Segment data from any device, then we'll transform and send it on to any tool.
 
 ## Quickstart
 

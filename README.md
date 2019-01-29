@@ -6,19 +6,19 @@ _You can't fix what you can't measure._ Analytics helps you measure your users, 
 
 How to get **started**:
 
-1. **Collect analytics data** from your app(s). 
+1. **Collect analytics data** from your app(s).
 	+ The top 200 Segment companies collect data from 5+ source types (web, mobile, server, CRM, etc.).
-2. **Send the data to 1+ analytics tools** (e.g Google Analytics, Amplitude, Mixpanel).
+2. **Send the data to analytics tools** (e.g Google Analytics, Amplitude, Mixpanel).
 	+ Over 250+ Segment companies send data to 8 destination categories (analytics, warehouse, s3, email, session recording, remarketing, etc.).
 3. **Explore your data** by creating metrics (e.g new signups, retention cohorts, and revenue).		  
 	+ Retention cohorts are the best way of measuring product market fit. Netflix has 70% paid retention after 12 months, 30% after 7 years.
 
-Segment collects analytics data and sends it to 250+ apps with the flip of a switch (e.g. Google Analytics, Mixpanel, Optimizely, Facebook Ads, Slack, Sentry). You only need one snippet and you can turn integrations on and off whenever you want with no additional code.
+[Segment](https://segment.com) collects analytics data and sends it to 250+ apps with the flip of a switch (e.g Google Analytics, Mixpanel, Optimizely, Facebook Ads, Slack, Sentry). You only need one snippet and you can turn integrations on and off whenever you want with no additional code.
 
 ## Why? 	
 1. **Power all your analytics apps with the same data**. Instead of wasting time integrating all of your tools individually, track data to Segment once. We're the last integration you'll ever do.
 
-2. **Query your data in SQL**. Play with your data in ridiculous detail with Segment SQL. We'll transform and load your customer behavioral data directly from your apps into Amazon Redshift, Google BigQuery, or Heroku Postgres. Save weeks of engineering time building a data warehouse and ETL pipeline.	
+2. **Query your data in SQL**. Play with your data in ridiculous detail with Segment SQL. We'll transform and load your customer behavioral data directly from your apps into Amazon Redshift, Google BigQuery, or Heroku Postgres. Save weeks of engineering time building a data warehouse and ETL pipeline.
 
 ```js
 analytics.load('YOUR_WRITE_KEY') // web_prod
@@ -29,7 +29,7 @@ select * from web_prod.order_completed
 order by price desc
 ```
 
-3. **Install tracking for the last time**. You only need to instrument Segment once. Reduce all of your tracking code and advertising tags into a single API.	
+3. **Install tracking for the last time**. You only need to instrument Segment once. Reduce all of your tracking code and advertising tags into a single API.
 
 4. **Send data from anywhere**.  Send Segment data from any device, then we'll transform and send it on to any tool.
 
@@ -63,7 +63,7 @@ Installing Segment is easy, just paste this snippet into the head of your site. 
 Now `window.analytics` is loaded and available to use throughout your app!
 
 ###  Single-Page Application
-The `page` method lets you record page views on your website, along with optional extra information about the page being viewed. You can read more about in the [page reference](https://segment.com/docs/sources/website/analytics.js/#page). Clicking a link or a new tab will not reload the webpage in an SPA. Therefore, using `analytics.page()` in `index.html` is not ideal and we need to simulate a page load. However, we can achieve `page` calls with the use of [react-router](https://reacttraining.com/react-router) and React's lifecycle methods.
+The `page` method lets you record page views on your website, along with optional information about the page being viewed. You can read more about in the [page reference](https://segment.com/docs/sources/website/analytics.js/#page). Clicking a link or a new tab will not reload the webpage in an SPA. Therefore, using `analytics.page()` in `index.html` is not ideal and we need to simulate a page load. However, we can achieve `page` calls with the use of [react-router](https://reacttraining.com/react-router) and React's lifecycle methods.
 
 If we separate our pages into their own components and allow the [`<Route />`](https://reacttraining.com/react-router/core/api/Route) component to handle when our pages render, then we can use `componentDidMount` to invoke our `page` calls:
 

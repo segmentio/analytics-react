@@ -2,7 +2,7 @@
   <img src="https://user-images.githubusercontent.com/658544/51635694-49383600-1f0c-11e9-804a-973e4792cac8.png"/>
 </div>
 
-_You can't fix what you can't measure._ You can't fix what you can't measure. Analytics helps you measure your users, product, and business. It unlocks insights into your app's funnel, core business metrics, and whether you have product-market fit.
+_You can't fix what you can't measure._ Analytics helps you measure your users, product, and business. It unlocks insights into your app's funnel, core business metrics, and whether you have product-market fit.
 
 How to get **started**:
 

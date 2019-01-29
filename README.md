@@ -2,15 +2,15 @@
   <img src="https://user-images.githubusercontent.com/658544/51635694-49383600-1f0c-11e9-804a-973e4792cac8.png"/>
 </div>
 
-_You can't fix what you can't measure._ Analytics helps you understand your product, users, and business. Also, it helps you understand your app's funnel, core metrics, and product market fit. 
+_You can't fix what you can't measure._ You can't fix what you can't measure. Analytics helps you measure your users, product, and business. It unlocks insights into your app's funnel, core business metrics, and whether you have product-market fit.
 
-Here's **how**:
+How to get **started**:
 
 1. **Collect analytics data** from your app(s). — _Stat: The top 200 Segment companies collect data from 5+ source types (web, mobile, server, crm, ...)._
 2. **Send the data to 1+ analytics tools** (like Google Analytics, Amplitude, Mixpanel, etc..). — _Stat: The top 200 Segment companies send data to 8 destination categories (analytics, warehouse, s3, email, session recording, remarketing, ...)._
 3. **Explore your data** by creating metrics (like new signups, retention cohorts, and revenue). — _Tip: Retention cohorts are the best way of measuring product market fit. Netflix has 70% paid retention after 12 months, 30% after 7 years._
 
-Segment collects analytics data and sends it to 250+ apps with the flip of a switch (e.g. Google Analytics, Mixpanel, Optimizely, Facebook Ads, Slack, Sentry, and more...). You only need one snippet and you can turn integrations on and off whenever you want with no additional code.
+Segment collects analytics data and sends it to 250+ apps with the flip of a switch (e.g. Google Analytics, Mixpanel, Optimizely, Facebook Ads, Slack, Sentry). You only need one snippet and you can turn integrations on and off whenever you want with no additional code.
 
 ## Why? 	
 1. **Power all your analytics apps with the same data**. With Segment as your customer data hub, you can focus on building incredible products and attracting more customers. Instead of wasting time integrating all of your tools individually, track data to Segment once. We're the last integration you'll ever do. Try new apps with the flip of a switch.	
@@ -26,7 +26,7 @@ select * from web_prod.order_completed
 order by price desc
 ```
 
-3. **Install tracking for the last time**. Our unified tracking code makes integrating new apps simple. You only need to instrument Segment once, then flip a switch to install new tools. Reduce all of your tracking code and advertising tags into a single API.	
+3. **Install tracking for the last time**. Our unified tracking code makes integrating new apps simple. You only need to instrument Segment once. Reduce all of your tracking code and advertising tags into a single API.	
 
 4. **Send data from anywhere**.  Send Segment data from any device, then we’ll transform and send it on to any tool. We support browsers, phones, tablets, smart watches, TVs, iBeacons, and more!
 
@@ -62,7 +62,7 @@ Now `window.analytics` is loaded and available to use throughout your app!
 ###  Single-Page Application
 The `page` method lets you record page views on your website, along with optional extra information about the page being viewed. You can read more about in the [page reference](https://segment.com/docs/sources/website/analytics.js/#page). Clicking a link or a new tab will not reload the webpage in an SPA. Therefore, using `analytics.page()` in `index.html` is not ideal and we need to simulate a page load. However, we can achieve `page` calls with the use of [react-router](https://reacttraining.com/react-router) and React's lifecycle methods.
 
-If we seperate our pages into their own components and allow the [`<Route />`](https://reacttraining.com/react-router/core/api/Route) component to handle when our pages render, then we can use `componentDidMount` to invoke our `page` calls:
+If we separate our pages into their own components and allow the [`<Route />`](https://reacttraining.com/react-router/core/api/Route) component to handle when our pages render, then we can use `componentDidMount` to invoke our `page` calls:
 
 ```javascript
 export default class HomePage extends Component {
@@ -168,7 +168,7 @@ export default class SignupButton extends Component {
 ```
 
 ### Lifecycle Method
-[Lifecycle methods](https://reactjs.org/docs/react-component.html#the-component-lifecycle) are also great use cases for tracking particular events. For example, if you want to track components that are conditionally rendered from a parent component and that are outside the scope of a `page` call, then you can use `componentDidMount` to trigger a `track` event:
+[Lifecycle methods](https://reactjs.org/docs/react-component.html#the-component-lifecycle) are also great for tracking particular events. For example, if you want to track components that are conditionally rendered from a parent component and that are outside the scope of a `page` call, then you can use `componentDidMount` to trigger a `track` event:
 
 ```javascript
 export default class VideoPlayer extends Component {

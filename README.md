@@ -6,9 +6,12 @@ _You can't fix what you can't measure._ Analytics helps you measure your users, 
 
 How to get **started**:
 
-1. **Collect analytics data** from your app(s). — _Stat: The top 200 Segment companies collect data from 5+ source types (web, mobile, server, crm, ...)._
-2. **Send the data to 1+ analytics tools** (like Google Analytics, Amplitude, Mixpanel, etc..). — _Stat: The top 200 Segment companies send data to 8 destination categories (analytics, warehouse, s3, email, session recording, remarketing, ...)._
-3. **Explore your data** by creating metrics (like new signups, retention cohorts, and revenue). — _Tip: Retention cohorts are the best way of measuring product market fit. Netflix has 70% paid retention after 12 months, 30% after 7 years._
+1. **Collect analytics data** from your app(s). 
+	+ The top 200 Segment companies collect data from 5+ source types (web, mobile, server, CRM, etc.).
+2. **Send the data to 1+ analytics tools** (e.g Google Analytics, Amplitude, Mixpanel).
+	+ Over 250+ Segment companies send data to 8 destination categories (analytics, warehouse, s3, email, session recording, remarketing, etc.).
+3. **Explore your data** by creating metrics (e.g new signups, retention cohorts, and revenue).		  
+	+ Retention cohorts are the best way of measuring product market fit. Netflix has 70% paid retention after 12 months, 30% after 7 years.
 
 Segment collects analytics data and sends it to 250+ apps with the flip of a switch (e.g. Google Analytics, Mixpanel, Optimizely, Facebook Ads, Slack, Sentry). You only need one snippet and you can turn integrations on and off whenever you want with no additional code.
 

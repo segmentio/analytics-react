@@ -1,10 +1,7 @@
 # Segment React Quickstart Guide
-
-
 <div align="center">
   <img src="https://user-images.githubusercontent.com/16131737/51960819-6b035280-240f-11e9-93c2-95d6a62822db.png"/>
-
-_**You can't fix what you can't measure.**_
+  <p><b><i>You can't fix what you can't measure</i></b></p>
 </div>
 
 Analytics helps you measure your users, product, and business. It unlocks insights into your app's funnel, core business metrics, and whether you have product-market fit.

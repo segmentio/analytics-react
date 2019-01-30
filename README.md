@@ -16,7 +16,7 @@ Analytics helps you measure your users, product, and business. It unlocks insigh
 2. **Send the data to analytics tools** (for example, Google Analytics, Amplitude, Mixpanel).
     - Over 250+ Segment companies send data to eight categories of destinations such as analytics tools, warehouses, email marketing and remarketing systems, session recording, and more.
 3. **Explore your data** by creating metrics (for example, new signups, retention cohorts, and revenue generation).
-    - [TODO - find a better parallel here] Retention cohorts are the best way of measuring product market fit. Netflix has 70% paid retention after 12 months, 30% after 7 years.
+    - The best Segment companies use retention cohorts to measure product market fit. Netflix has 70% paid retention after 12 months, 30% after 7 years.
 
 [Segment](https://segment.com) collects analytics data and allows you to send it to more than 250 apps (such as Google Analytics, Mixpanel, Optimizely, Facebook Ads, Slack, Sentry) just by flipping a switch. You only need one Segment code snippet, and you can turn integrations on and off at will, with no additional code.
 
@@ -27,7 +27,7 @@ Analytics helps you measure your users, product, and business. It unlocks insigh
 
 3. **Send data from anywhere**. Send Segment data from any device, and we'll transform and send it on to any tool.
 
-4. **Query your data in SQL**. Slice, dice, and analyze your data in detail with Segment SQL. We'll transform and load your customer behavioral data directly from your apps into Amazon Redshift, Google BigQuery, or Heroku (TODO is it only Heroku?) Postgres. Save weeks of engineering time by not having to invent your own data warehouse and ETL pipeline.
+4. **Query your data in SQL**. Slice, dice, and analyze your data in detail with Segment SQL. We'll transform and load your customer behavioral data directly from your apps into Amazon Redshift, Google BigQuery, or Postgres. Save weeks of engineering time by not having to invent your own data warehouse and ETL pipeline.
 
     For example, you can capture data on any app, as shown in the snippet below:
     ```js
@@ -350,11 +350,12 @@ export default class User extends Component {
 
 Interested more in data standardization? Check out our [protocols product](https://segment.com/product/protocols) to improve data quality.
 
-## 💾 Warehouses
-(TODO what is the specific value prop from Warehouses to react? this section seems like a bit of a digression.)
-A `warehouse` is a special subset of destinations where we load data in bulk at a regular intervals, inserting and updating events and objects while automatically adjusting their schema to fit the data you've sent to Segment. We do the heavy lifting of capturing, schematizing, and loading your user data into your data `warehouse` of choice.
+You may wondering what you can be doing with all the raw data you are sending to Segment from your React app. With our [warehouses] product](https://segment.com/product/warehouses), your analysts and data engineers can shift focus from data normalization and pipeline maintenance to providing insights for business teams. Having the ability to query data directly in SQL and layer on visualization tools can take your product to the next level.
 
-With `Warehouses` your analysts and data engineers can shift focus from data normalization and pipeline maintenance to providing insights for business teams. Examples of data warehouses include Amazon Redshift, Google BigQuery, MySQL, and Postgres.
+## 💾 Warehouses
+A warehouse is a special subset of destinations where we load data in bulk at a regular intervals, inserting and updating events and objects while automatically adjusting their schema to fit the data you've sent to Segment. We do the heavy lifting of capturing, schematizing, and loading your user data into your data warehouse of choice.
+
+Examples of data warehouses include Amazon Redshift, Google BigQuery, MySQL, and Postgres.
 
 <div align="center">
   <img src="https://user-images.githubusercontent.com/16131737/51726992-d23f9200-201e-11e9-8b68-608ebaaa6c65.gif"/>

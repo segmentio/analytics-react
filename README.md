@@ -260,7 +260,7 @@ Once you've added a few track calls, **you're done**! You've successfully instal
 Once you've mastered the basics, here are some advanced use cases you can apply with Segment.
 
 ### Track Calls for Error Logging
-You can also use `track` calls to log errors, using a higher-order component such as `ErrorBoundary` to wrap around child components. Then, when an error occurs you log the error with `track` and gracefully display the appropriate child component. In this example, when an error is caught by `componentDidCatch`, (TODO - what does this snippet do in basic terms? Does this belong in the Advanced section?)
+You can also use `track` calls to log errors, using a higher-order component such as `ErrorBoundary` to wrap around child components. Then, when an error occurs you log the error with `track` and gracefully display the appropriate child component. In this example, when an error is caught by `componentDidCatch`, we set the state, track the error, and the `ErrorComponent` will be rendered.
 
 ```JSX
 export default class ErrorBoundary extends Component {
@@ -347,7 +347,8 @@ export default class User extends Component {
   }
 }
 ```
-(TODO: plug Protocols? :) )
+
+Interested more in data standardization? Check out our [protocols product](https://segment.com/product/protocols) to improve data quality.
 
 ## 💾 Warehouses
 (TODO what is the specific value prop from Warehouses to react? this section seems like a bit of a digression.)

@@ -29,7 +29,7 @@ Analytics helps you measure your users, product, and business. It unlocks insigh
 
 4. **Query your data in SQL**. Slice, dice, and analyze your data in detail with Segment SQL. We'll transform and load your customer behavioral data directly from your apps into Amazon Redshift, Google BigQuery, or Postgres. Save weeks of engineering time by not having to invent your own data warehouse and ETL pipeline.
 
-    For example, you can capture data on any app, as shown in the snippet below:
+    For example, you can capture data on any app:
     ```js
     analytics.load('YOUR_WRITE_KEY') // web_prod
     analytics.track('Order Completed', { price: 99.84 })
@@ -260,7 +260,7 @@ Once you've added a few track calls, **you're done**! You've successfully instal
 Once you've mastered the basics, here are some advanced use cases you can apply with Segment.
 
 ### Track Calls for Error Logging
-You can also use `track` calls to log errors, using a higher-order component such as `ErrorBoundary` to wrap around child components. Then, when an error occurs you log the error with `track` and gracefully display the appropriate child component. In this example, when an error is caught by `componentDidCatch`, we set the state, track the error, and the `ErrorComponent` will be rendered.
+You can also use `track` calls to log errors, using a higher-order component such as `ErrorBoundary` to wrap around child components. Then, when an error occurs you log the error with `track` and gracefully display the appropriate child component. In this example, when an error is caught by `componentDidCatch`, we set the state, `track` the error, and the `ErrorComponent` will be rendered.
 
 ```JSX
 export default class ErrorBoundary extends Component {
@@ -350,7 +350,7 @@ export default class User extends Component {
 
 Interested more in data standardization? Check out our [protocols product](https://segment.com/product/protocols) to improve data quality.
 
-You may wondering what you can be doing with all the raw data you are sending to Segment from your React app. With our [warehouses] product](https://segment.com/product/warehouses), your analysts and data engineers can shift focus from data normalization and pipeline maintenance to providing insights for business teams. Having the ability to query data directly in SQL and layer on visualization tools can take your product to the next level.
+You may wondering what you can be doing with all the raw data you are sending to Segment from your React app. With our [warehouses product](https://segment.com/product/warehouses), your analysts and data engineers can shift focus from data normalization and pipeline maintenance to providing insights for business teams. Having the ability to query data directly in SQL and layer on visualization tools can take your product to the next level.
 
 ## 💾 Warehouses
 A warehouse is a special subset of destinations where we load data in bulk at a regular intervals, inserting and updating events and objects while automatically adjusting their schema to fit the data you've sent to Segment. We do the heavy lifting of capturing, schematizing, and loading your user data into your data warehouse of choice.

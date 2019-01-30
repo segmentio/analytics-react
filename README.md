@@ -2,10 +2,8 @@
 
 
 <div align="center">
-
-  ![diagram showing a React app sending data to Segment, which sends data to other tools](ReactQS1x.png)
-
-_**You can't fix what you can't measure.**_
+  <img src="https://user-images.githubusercontent.com/16131737/51959574-dc400700-2409-11e9-8a5a-499c835cfbb6.png"/>
+  _**You can't fix what you can't measure.**_
 </div>
 
 Analytics helps you measure your users, product, and business. It unlocks insights into your app's funnel, core business metrics, and whether you have product-market fit.
@@ -30,12 +28,12 @@ Analytics helps you measure your users, product, and business. It unlocks insigh
 
 4. **Query your data in SQL**. Slice, dice, and analyze your data in detail with Segment SQL. We'll transform and load your customer behavioral data directly from your apps into Amazon Redshift, Google BigQuery, or Heroku (TODO is it only Heroku?) Postgres. Save weeks of engineering time by not having to invent your own data warehouse and ETL pipeline.
 
-    For example, you can capture data using a (TODO whatever this is?) in the javascript snippet below
+    For example, you can capture data on any app, as shown in the snippet below:
     ```js
     analytics.load('YOUR_WRITE_KEY') // web_prod
     analytics.track('Order Completed', { price: 99.84 })
     ```
-    ...and then query the resulting data in SQL using a query like the one below.
+    Then, query the resulting data in SQL:
 
     ```sql
     select * from web_prod.order_completed
@@ -84,26 +82,27 @@ To start with this demo app, follow the instructions below:
     npm start
     ```
 
-3. Go to the Segment site, and in the Debugger look at the live events being triggered in your app. You should see the following events:
+3. Go to the Segment site, and in the Debugger look at the live events being triggered in your app. You should see the following:
     - Page event: `Home` - When someone views the `home` page.
     - Page event: `About` - When someone views the `about` page.
     - Track event: `Learn React Link Clicked` - When someone clicks the "Learn React" link.
 
 Congrats! You're seeing live data from your demo react app in Segment! 🎉
 
-# 🔌 Installing on your app
+# 🔌 Installing on Your App
 
 Okay, the demo app is cool, but how do I get this in my own React app? Follow the steps below.
 
 ## ✂️ Step 1: Copy the Snippet
 To install Segment in your own app, paste the snippet below into the `head` tag of your site. Then, replace `YOUR_WRITE_KEY` in the snippet with your Segment project's **Write Key**.
 
-(Pro tip: you can find your write key in your project setup guide, or in your Segment settings.)
+> **Tip!** You can find your write key in your Segment project setup guide or settings.
 
 ```html
 <script type="text/javascript">
   !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t,e){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src="https://cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.1.0";
   analytics.load("YOUR_WRITE_KEY");
+  // analytics.page() // Uncomment if your application is NOT an SPA
   }}();
 </script>
 ```
@@ -112,11 +111,11 @@ Now `window.analytics` is loaded and available to use throughout your app!
 In the next sections you'll build out your implementation to track page loads, to identify individual users of your app, and track the actions they take.
 
 
-## 🔍 Step 2: Track Page loads in an SPA
+## 🔍 Step 2: Track Page Loads in an SPA
 
-> **Tip!** If your React application isn't a Single Page application, you can uncomment the section in the snippet (? TODO - add a commented out section to the snippet to handle Non-SPAs) and skip to Step 2.
+> **Tip!** If your React application is **not** a Single Page application, you can uncomment the section in the above snippet and skip to Step 3.
 
-The snippet from Step 1 loads Analytics.js into your app and is ready to track page loads. However... Most React apps are a Single Page App (SPA), and in SPAs clicking a link or a new tab does not reload the whole webpage.
+The snippet from Step 1 loads `Analytics.js` into your app and is ready to track page loads. However, most React apps are a Single Page App (SPA), and in SPAs clicking a link or a new tab does not reload the whole webpage.
 
 The `page` method lets you record page views on your website, along with optional information about the page being viewed. You can read more about how this works in the [page reference](https://segment.com/docs/sources/website/analytics.js/#page).
 
@@ -143,7 +142,7 @@ export default class HomePage extends Component {
 
 ## 🔍 Step 3: Identify Users
 
-The `identify` method is how you tell Segment who the current user is. It includes a unique User ID and any optional traits you can pass on about them. You can read more about this in the [identify reference pages](https://segment.com/docs/sources/website/analytics.js/#identify).
+The `identify` method is how you tell Segment who the current user is. It includes a unique User ID and any optional traits you can pass on about them. You can read more about this in the [identify reference](https://segment.com/docs/sources/website/analytics.js/#identify).
 
 **Note:** You don't need to call `identify` for anonymous visitors to your site. Segment automatically assigns them an `anonymousId`, so just calling `page` and `track` still works just fine without `identify`.
 
@@ -212,8 +211,8 @@ window.analytics.track('Article Bookmarked', {
 
 The snippet tells us that the user just triggered the **Article Bookmarked** event, and the article they bookmarked was the `Snow Fall` article authored by `John Branch`. Properties can be anything you want to associate to an event when it is tracked.
 
-### Track calls with Event Handlers
-In React, you can use several event handlers, such as `onClick`, `onSubmit`, `onMouseOver`, to call the `track` events. See the React docs on [event handlers](https://reactjs.org/docs/handling-events.html) for more information. In the example below, we use the `onClick` handler to make a `track` call to log a `User Signup`.
+### Track Calls with Event Handlers
+In React, you can use several event handlers, such as `onClick`, `onSubmit`, `onMouseOver`, to call the `track` events. In the example below, we use the `onClick` handler to make a `track` call to log a `User Signup`.
 
 ```javascript
 export default class SignupButton extends Component {
@@ -231,7 +230,9 @@ export default class SignupButton extends Component {
 }
 ```
 
-### Track calls with lifecycle methods
+> **Tip!** Other handlers might be better for other situations. You can see the [React docs on event handlers](https://reactjs.org/docs/handling-events.html) for more information.
+
+### Track Calls with Lifecycle Methods
 [Lifecycle methods](https://reactjs.org/docs/react-component.html#the-component-lifecycle) are also great for tracking particular events, and in fact we used a lifecycle method in Step 2 to track page component loads. For example, if you want to track components that are conditionally rendered from a parent component and that are outside the scope of a `page` call, then you can use `componentDidMount` to trigger a `track` event:
 
 ```javascript
@@ -250,14 +251,14 @@ export default class VideoPlayer extends Component {
 }
 ```
 
-## What's next?
+## 🤔 What's next?
 Once you've added a few track calls, **you're done**! You've successfully installed `Analytics.js` tracking. Now you're ready to see your data in the Segment dashboard, and turn on any destination tools. 🎉
 
 ## 🎓 Advanced
 
-Once you've mastered the basics, here are some more involved things you can do in Segment.
+Once you've mastered the basics, here are some advanced use cases you can apply with Segment.
 
-### Tracking for error logging
+### Track Calls for Error Logging
 You can also use `track` calls to log errors, using a higher-order component such as `ErrorBoundary` to wrap around child components. Then, when an error occurs you log the error with `track` and gracefully display the appropriate child component. In this example, when an error is caught by `componentDidCatch`, (TODO - what does this snippet do in basic terms? Does this belong in the Advanced section?)
 
 ```javascript
@@ -361,4 +362,5 @@ With `Warehouses` your analysts and data engineers can shift focus from data nor
 ## 🤔 What about privacy?
 Want to allow your visitors to control and customize their tracking preferences on your site? Integrate our [consent-manager](https://github.com/segmentio/consent-manager), which is imported via the snippet and uses our pre-built React component under the hood.
 
+## 🤔 Docs & Feedback
 Check out our full [Analytics.js reference](https://segment.com/docs/sources/website/analytics.js/) to see what else is possible, or read about the [Tracking API methods](https://segment.com/docs/sources/server/http/) to get a sense for the bigger picture. If you have any questions, or see anywhere we can improve our documentation, [let us know](https://segment.com/contact/)!

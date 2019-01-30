@@ -2,8 +2,9 @@
 
 
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/16131737/51959574-dc400700-2409-11e9-8a5a-499c835cfbb6.png"/>
-  _**You can't fix what you can't measure.**_
+  <img src="https://user-images.githubusercontent.com/16131737/51960819-6b035280-240f-11e9-93c2-95d6a62822db.png"/>
+
+_**You can't fix what you can't measure.**_
 </div>
 
 Analytics helps you measure your users, product, and business. It unlocks insights into your app's funnel, core business metrics, and whether you have product-market fit.
@@ -59,7 +60,7 @@ Once you have data being sent to Segment, forward this data to any of our 250+ [
   <img src="https://user-images.githubusercontent.com/16131737/51859644-7b6edc80-22ec-11e9-8597-113a8b05ee07.gif"/>
 </div>
 
-# 📺 <span name="demo">Demo</span>
+## 📺 <span name="demo">Demo</span>
 To start with this demo app, follow the instructions below:
 
 1. Edit the snippet in [index.html](https://github.com/segmentio/analytics-react/blob/master/public/index.html#L28) to replace `YOUR_WRITE_KEY` with your Segment **Write Key**.
@@ -123,7 +124,7 @@ This means that using `analytics.page()` in `index.html` on a SPA will not detec
 
 If you separate your pages into their own components and allow the [`<Route />`](https://reacttraining.com/react-router/core/api/Route) component to handle when the page renders, you can use `componentDidMount` to invoke `page` calls. The example below shows one way you could do this.
 
-```javascript
+```JSX
 export default class HomePage extends Component {
   componentDidMount() {
     window.analytics.page('Home');
@@ -159,7 +160,7 @@ This call identifies Michael by his unique User ID and labels him with `name` an
 
 In React, if you have a form where users sign up or log in, you can use the `onSubmit` handler to call `identify`, as in the example below:
 
-```javascript
+```JSX
 export default class IdentifyForm extends Component {
   state = {
     name: '',
@@ -214,7 +215,7 @@ The snippet tells us that the user just triggered the **Article Bookmarked** eve
 ### Track Calls with Event Handlers
 In React, you can use several event handlers, such as `onClick`, `onSubmit`, `onMouseOver`, to call the `track` events. In the example below, we use the `onClick` handler to make a `track` call to log a `User Signup`.
 
-```javascript
+```JSX
 export default class SignupButton extends Component {
   trackEvent() {
     window.analytics.track('User Signup');
@@ -235,7 +236,7 @@ export default class SignupButton extends Component {
 ### Track Calls with Lifecycle Methods
 [Lifecycle methods](https://reactjs.org/docs/react-component.html#the-component-lifecycle) are also great for tracking particular events, and in fact we used a lifecycle method in Step 2 to track page component loads. For example, if you want to track components that are conditionally rendered from a parent component and that are outside the scope of a `page` call, then you can use `componentDidMount` to trigger a `track` event:
 
-```javascript
+```JSX
 export default class VideoPlayer extends Component {
   componentDidMount() {
     window.analytics.track('Video Played');
@@ -261,7 +262,7 @@ Once you've mastered the basics, here are some advanced use cases you can apply 
 ### Track Calls for Error Logging
 You can also use `track` calls to log errors, using a higher-order component such as `ErrorBoundary` to wrap around child components. Then, when an error occurs you log the error with `track` and gracefully display the appropriate child component. In this example, when an error is caught by `componentDidCatch`, (TODO - what does this snippet do in basic terms? Does this belong in the Advanced section?)
 
-```javascript
+```JSX
 export default class ErrorBoundary extends Component {
   static propTypes = {
     /**
@@ -310,11 +311,11 @@ export default class ErrorBoundary extends Component {
 }
 ```
 
-### Typecheck
+### Typechecking with PropTypes
 
-You can use Typechecking with [`prop-types`](https://reactjs.org/docs/typechecking-with-proptypes.html) to catch a lot of potential bugs and prevent handing down information in the wrong format. For example, you can enforce a format for `user` related objects which can help with data standardization. You can get creative with the traits you expect to be sent to Segment for `identify` and `track`:
+You can use typechecking with [`prop-types`](https://reactjs.org/docs/typechecking-with-proptypes.html) to catch a lot of potential bugs and prevent handing down information in the wrong format. For example, you can enforce a format for `user` related objects which can help with data standardization. You can get creative with the traits you expect to be sent to Segment for `identify` and `track`:
 
-```javascript
+```JSXj
 export default class User extends Component {
   static propTypes = {
     id: PropTypes.string,
@@ -359,8 +360,8 @@ With `Warehouses` your analysts and data engineers can shift focus from data nor
 </div>
 
 
-## 🤔 What about privacy?
+## 🔒 What about privacy?
 Want to allow your visitors to control and customize their tracking preferences on your site? Integrate our [consent-manager](https://github.com/segmentio/consent-manager), which is imported via the snippet and uses our pre-built React component under the hood.
 
-## 🤔 Docs & Feedback
+## 📝 Docs & Feedback
 Check out our full [Analytics.js reference](https://segment.com/docs/sources/website/analytics.js/) to see what else is possible, or read about the [Tracking API methods](https://segment.com/docs/sources/server/http/) to get a sense for the bigger picture. If you have any questions, or see anywhere we can improve our documentation, [let us know](https://segment.com/contact/)!

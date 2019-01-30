@@ -43,7 +43,7 @@ Analytics helps you measure your users, product, and business. It unlocks insigh
 
 
 
-## Quickstart
+# 🏃💨 Quickstart
 
 In this tutorial you'll add your write key to this React demo app to start sending data from the app to Segment, and from there to any of our destinations, using our [Analytics.js library](https://segment.com/docs/sources/website/analytics.js/). Once your app is set up, you'll be able to turn on new destinations with the click of a button! Ready to try it for yourself? Scroll down to the <a href="#demo">demo section</a> and run the app!
 
@@ -315,7 +315,7 @@ export default class ErrorBoundary extends Component {
 
 You can use typechecking with [`prop-types`](https://reactjs.org/docs/typechecking-with-proptypes.html) to catch a lot of potential bugs and prevent handing down information in the wrong format. For example, you can enforce a format for `user` related objects which can help with data standardization. You can get creative with the traits you expect to be sent to Segment for `identify` and `track`:
 
-```JSXj
+```JSX
 export default class User extends Component {
   static propTypes = {
     id: PropTypes.string,

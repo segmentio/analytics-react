@@ -2,7 +2,8 @@
 
 
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/658544/51635694-49383600-1f0c-11e9-804a-973e4792cac8.png"/>
+
+  ![diagram showing a React app sending data to Segment, which sends data to other tools](ReactQS1x.png)
 
 _**You can't fix what you can't measure.**_
 </div>

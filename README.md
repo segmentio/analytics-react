@@ -27,13 +27,12 @@ Analytics helps you measure your users, product, and business. It unlocks insigh
 
     For example, you can capture data on any app:
     ```js
-    analytics.load('YOUR_WRITE_KEY') // web_prod
     analytics.track('Order Completed', { price: 99.84 })
     ```
     Then, query the resulting data in SQL:
 
     ```sql
-    select * from web_prod.order_completed
+    select * from app.order_completed
     order by price desc
     ```
 

@@ -338,7 +338,7 @@ export default class User extends Component {
 }
 ```
 
-Interested more in data standardization? Check out our [protocols product](https://segment.com/product/protocols) to improve data quality.
+If you love typechecking, you'll love our open-source project [typewriter](https://github.com/segmentio/typewriter), which enforces a strongly-typed tracking spec via a JSON schema. Interested more in data standardization? Check out our [protocols product](https://segment.com/product/protocols) to improve data quality.
 
 You may wondering what you can be doing with all the raw data you are sending to Segment from your React app. With our [warehouses product](https://segment.com/product/warehouses), your analysts and data engineers can shift focus from data normalization and pipeline maintenance to providing insights for business teams. Having the ability to query data directly in SQL and layer on visualization tools can take your product to the next level.
 

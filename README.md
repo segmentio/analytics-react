@@ -7,7 +7,6 @@
 Analytics helps you measure your users, product, and business. It unlocks insights into your app's funnel, core business metrics, and whether you have product-market fit.
 
 ## How to get started
-
 1. **Collect analytics data** from your app(s).
     - The top 200 Segment companies collect data from 5+ source types (web, mobile, server, CRM, etc.).
 2. **Send the data to analytics tools** (for example, Google Analytics, Amplitude, Mixpanel).
@@ -85,10 +84,9 @@ To start with this demo app, follow the instructions below:
     - Page event: `About` - When someone views the `about` page.
     - Track event: `Learn React Link Clicked` - When someone clicks the "Learn React" link.
 
-Congrats! You're seeing live data from your demo react app in Segment! 🎉
+Congrats! You're seeing live data from your demo React app in Segment! 🎉
 
 # 🔌 Installing on Your App
-
 Okay, the demo app is cool, but how do I get this in my own React app? Follow the steps below.
 
 ## ✂️ Step 1: Copy the Snippet
@@ -109,8 +107,7 @@ Now `window.analytics` is loaded and available to use throughout your app!
 In the next sections you'll build out your implementation to track page loads, to identify individual users of your app, and track the actions they take.
 
 
-## 🔍 Step 2: Track Page Loads in an SPA
-
+## 📱 Step 2: Track Page Views in an SPA
 > **Tip!** If your React application is **not** a Single Page application, you can uncomment the section in the above snippet and skip to Step 3.
 
 The snippet from Step 1 loads `Analytics.js` into your app and is ready to track page loads. However, most React apps are a Single Page App (SPA), and in SPAs clicking a link or a new tab does not reload the whole webpage.
@@ -139,7 +136,6 @@ export default class HomePage extends Component {
 
 
 ## 🔍 Step 3: Identify Users
-
 The `identify` method is how you tell Segment who the current user is. It includes a unique User ID and any optional traits you can pass on about them. You can read more about this in the [identify reference](https://segment.com/docs/sources/website/analytics.js/#identify).
 
 **Note:** You don't need to call `identify` for anonymous visitors to your site. Segment automatically assigns them an `anonymousId`, so just calling `page` and `track` still works just fine without `identify`.
@@ -253,11 +249,10 @@ export default class VideoPlayer extends Component {
 Once you've added a few track calls, **you're done**! You've successfully installed `Analytics.js` tracking. Now you're ready to see your data in the Segment dashboard, and turn on any destination tools. 🎉
 
 ## 🎓 Advanced
-
 Once you've mastered the basics, here are some advanced use cases you can apply with Segment.
 
 ### Track Calls for Error Logging
-You can also use `track` calls to log errors, using a higher-order component such as `ErrorBoundary` to wrap around child components. Then, when an error occurs you log the error with `track` and gracefully display the appropriate child component. In this example, when an error is caught by `componentDidCatch`, we set the state, `track` the error, and the `ErrorComponent` will be rendered.
+You can also use `track` calls to log errors, using a higher-order component such as `ErrorBoundary` to wrap around child components. Then, when an error occurs you log the error with `track` and gracefully display the appropriate child component. In this example, when an error is caught by `componentDidCatch`, we set the state, `track` the error, and then the `ErrorComponent` will be rendered.
 
 ```JSX
 export default class ErrorBoundary extends Component {
@@ -309,7 +304,6 @@ export default class ErrorBoundary extends Component {
 ```
 
 ### Typechecking with PropTypes
-
 You can use typechecking with [`prop-types`](https://reactjs.org/docs/typechecking-with-proptypes.html) to catch a lot of potential bugs and prevent handing down information in the wrong format. For example, you can enforce a format for `user` related objects which can help with data standardization. You can get creative with the traits you expect to be sent to Segment for `identify` and `track`:
 
 ```JSX
@@ -357,7 +351,6 @@ Examples of data warehouses include Amazon Redshift, Google BigQuery, MySQL, and
 <div align="center">
   <img src="https://user-images.githubusercontent.com/16131737/51726992-d23f9200-201e-11e9-8b68-608ebaaa6c65.gif"/>
 </div>
-
 
 ## 🔒 What about privacy?
 Want to allow your visitors to control and customize their tracking preferences on your site? Integrate our [consent-manager](https://github.com/segmentio/consent-manager), which is imported via the snippet and uses our pre-built React component under the hood.

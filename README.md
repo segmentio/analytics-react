@@ -14,7 +14,7 @@ Analytics helps you measure your users, product, and business. It unlocks insigh
 3. **Explore your data** by creating metrics (for example, new signups, retention cohorts, and revenue generation).
     - The best Segment companies use retention cohorts to measure product market fit. Netflix has 70% paid retention after 12 months, 30% after 7 years.
 
-[Segment](https://segment.com) collects analytics data and allows you to send it to more than 250 apps (such as Google Analytics, Mixpanel, Optimizely, Facebook Ads, Slack, Sentry) just by flipping a switch. You only need one Segment code snippet, and you can turn integrations on and off at will, with no additional code. [Sign up with Segment today](https://app.segment.com/signup?ref=github&library=react).
+[Segment](https://segment.com) collects analytics data and allows you to send it to more than 250 apps (such as Google Analytics, Mixpanel, Optimizely, Facebook Ads, Slack, Sentry) just by flipping a switch. You only need one Segment code snippet, and you can turn integrations on and off at will, with no additional code. [Sign up with Segment today](https://app.segment.com/signup?utm_source=github&utm_medium=click&utm_campaign=protos_react).
 
 ### Why?
 1. **Power all your analytics apps with the same data**. Instead of writing code to integrate all of your tools individually, send data to Segment, once.
@@ -58,7 +58,7 @@ Once you have data being sent to Segment, forward this data to any of our 250+ [
 ## 📺 <span name="demo">Demo</span>
 To start with this demo app, follow the instructions below:
 
-1. [Sign up](https://app.segment.com/signup?ref=github&library=react) with Segment and edit the snippet in [index.html](https://github.com/segmentio/analytics-react/blob/master/public/index.html#L28) to replace `YOUR_WRITE_KEY` with your Segment **Write Key**.
+1. [Sign up](https://app.segment.com/signup?utm_source=github&utm_medium=click&utm_campaign=protos_react) with Segment and edit the snippet in [index.html](https://github.com/segmentio/analytics-react/blob/master/public/index.html#L28) to replace `YOUR_WRITE_KEY` with your Segment **Write Key**.
     > **Tip!** You can find your key in your project setup guide or settings in the Segment.
 
     Your snippet will look something like the example below.
@@ -89,7 +89,7 @@ Congrats! You're seeing live data from your demo React app in Segment! 🎉
 Okay, the demo app is cool, but how do I get this in my own React app? Follow the steps below.
 
 ## ✂️ Step 1: Copy the Snippet
-To install Segment in your own app, paste the snippet below into the `head` tag of your site. Then, [sign up](https://app.segment.com/signup?ref=github&library=react) with Segment and replace `YOUR_WRITE_KEY` in the snippet with your Segment project's **Write Key**.
+To install Segment in your own app, paste the snippet below into the `head` tag of your site. Then, [sign up](https://app.segment.com/signup?utm_source=github&utm_medium=click&utm_campaign=protos_react) with Segment and replace `YOUR_WRITE_KEY` in the snippet with your Segment project's **Write Key**.
 
 > **Tip!** You can find your write key in your Segment project setup guide or settings.
 

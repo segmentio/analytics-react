@@ -30,16 +30,12 @@ Analytics helps you measure your users, product, and business. It unlocks insigh
     analytics.track('Order Completed', { price: 99.84 })
     ```
     Then, query the resulting data in SQL:
-
     ```sql
     select * from app.order_completed
     order by price desc
     ```
 
-
-
 # 🏃💨 Quickstart
-
 In this tutorial you'll add your write key to this React demo app to start sending data from the app to Segment, and from there to any of our destinations, using our [Analytics.js library](https://segment.com/docs/sources/website/analytics.js?utm_source=github&utm_medium=click&utm_campaign=protos_react). Once your app is set up, you'll be able to turn on new destinations with the click of a button! Ready to try it for yourself? Scroll down to the <a href="#demo">demo section</a> and run the app!
 
 Start sending data from any [source](https://segment.com/docs/guides/general/what-is-a-source?utm_source=github&utm_medium=click&utm_campaign=protos_react) and see events live in the Segment **debugger**:
@@ -72,7 +68,6 @@ To start with this demo app, follow the instructions below:
     ```
 
 2. From the command line, use `npm install` to install the dependencies, then `npm start` to run the app.
-
     ```bash
     npm install
     npm start
@@ -105,7 +100,6 @@ Now `window.analytics` is loaded and available to use throughout your app!
 
 In the next sections you'll build out your implementation to track page loads, to identify individual users of your app, and track the actions they take.
 
-
 ## 📱 Step 2: Track Page Views in an SPA
 > **Tip!** If your React application is **not** a Single Page application, you can uncomment the section in the above snippet and skip to Step 3.
 
@@ -132,7 +126,6 @@ export default class HomePage extends Component {
   }
 }
 ```
-
 
 ## 🔍 Step 3: Identify Users
 The `identify` method is how you tell Segment who the current user is. It includes a unique User ID and any optional traits you can pass on about them. You can read more about this in the [identify reference](https://segment.com/docs/sources/website/analytics.js/#identify?utm_source=github&utm_medium=click&utm_campaign=protos_react).
@@ -237,7 +230,7 @@ export default class VideoPlayer extends Component {
   render() {
     return (
       <video autoplay>
-        <source src="https://www.youtube.com/watch?v=dQw4w9WgXcQ" type="video/mp4">
+        <source src="https://www.youtube.com/watch?v=dQw4w9WgXcQ" type="video/youtube">
       </video>
     );
   }

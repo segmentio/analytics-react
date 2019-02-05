@@ -84,7 +84,8 @@ Congrats! You're seeing live data from your demo React app in Segment! 🎉
 Okay, the demo app is cool, but how do I get this in my own React app? Follow the steps below.
 
 ## ✂️ Step 1: Copy the Snippet
-To install Segment in your own app, paste the snippet below into the `head` tag of your site. Then, [sign up](https://app.segment.com/signup?utm_source=github&utm_medium=click&utm_campaign=protos_react) with Segment and replace `YOUR_WRITE_KEY` in the snippet with your Segment project's **Write Key**.
+To install Segment in your own app first [sign up](https://app.segment.com/signup?utm_source=github&utm_medium=click&utm_campaign=protos_react) with Segment and locate your Segment project's **Write Key**.
+Then, copy and paste the snippet below into the `head` tag of your site. Replace `YOUR_WRITE_KEY` in the snippet below with your Segment project's write key.
 
 > **Tip!** You can find your write key in your Segment project setup guide or settings.
 

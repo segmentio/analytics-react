@@ -51,37 +51,8 @@ Once you have data being sent to Segment, forward this data to any of our 250+ [
   <img src="https://user-images.githubusercontent.com/16131737/51859644-7b6edc80-22ec-11e9-8597-113a8b05ee07.gif"/>
 </div>
 
-## 📺 <span name="demo">Demo</span>
-To start with this demo app, follow the instructions below:
-
-1. [Sign up](https://app.segment.com/signup?utm_source=github&utm_medium=click&utm_campaign=protos_react) with Segment and edit the snippet in [index.html](https://github.com/segmentio/analytics-react/blob/master/public/index.html#L28) to replace `YOUR_WRITE_KEY` with your Segment **Write Key**.
-    > **Tip!** You can find your key in your project setup guide or settings in the Segment.
-
-    Your snippet will look something like the example below.
-
-    ```html
-    <script type="text/javascript">
-      !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t,e){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src="https://cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.1.0";
-      analytics.load("YOUR_WRITE_KEY");
-      }}();
-    </script>
-    ```
-
-2. From the command line, use `npm install` to install the dependencies, then `npm start` to run the app.
-    ```bash
-    npm install
-    npm start
-    ```
-
-3. Go to the Segment site, and in the Debugger look at the live events being triggered in your app. You should see the following:
-    - Page event: `Home` - When someone views the `home` page.
-    - Page event: `About` - When someone views the `about` page.
-    - Track event: `Learn React Link Clicked` - When someone clicks the "Learn React" link.
-
-Congrats! You're seeing live data from your demo React app in Segment! 🎉
-
 # 🔌 Installing on Your App
-Okay, the demo app is cool, but how do I get this in my own React app? Follow the steps below.
+How do you get this in your own React app? Follow the steps below.
 
 ## ✂️ Step 1: Copy the Snippet
 To install Segment in your own app first [sign up](https://app.segment.com/signup?utm_source=github&utm_medium=click&utm_campaign=protos_react) with Segment and locate your Segment project's **Write Key**.
@@ -344,6 +315,35 @@ Examples of data warehouses include Amazon Redshift, Google BigQuery, MySQL, and
 <div align="center">
   <img src="https://user-images.githubusercontent.com/16131737/51726992-d23f9200-201e-11e9-8b68-608ebaaa6c65.gif"/>
 </div>
+
+## 📺 <span name="demo">Demo</span>
+To start with this demo app, follow the instructions below:
+
+1. [Sign up](https://app.segment.com/signup?utm_source=github&utm_medium=click&utm_campaign=protos_react) with Segment and edit the snippet in [index.html](https://github.com/segmentio/analytics-react/blob/master/public/index.html#L28) to replace `YOUR_WRITE_KEY` with your Segment **Write Key**.
+    > **Tip!** You can find your key in your project setup guide or settings in the Segment.
+
+    Your snippet will look something like the example below.
+
+    ```html
+    <script type="text/javascript">
+      !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t,e){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src="https://cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.1.0";
+      analytics.load("YOUR_WRITE_KEY");
+      }}();
+    </script>
+    ```
+
+2. From the command line, use `npm install` to install the dependencies, then `npm start` to run the app.
+    ```bash
+    npm install
+    npm start
+    ```
+
+3. Go to the Segment site, and in the Debugger look at the live events being triggered in your app. You should see the following:
+    - Page event: `Home` - When someone views the `home` page.
+    - Page event: `About` - When someone views the `about` page.
+    - Track event: `Learn React Link Clicked` - When someone clicks the "Learn React" link.
+
+Congrats! You're seeing live data from your demo React app in Segment! 🎉
 
 ## 🔒 What about privacy?
 Want to allow your visitors to control and customize their tracking preferences on your site? Integrate our [consent-manager](https://github.com/segmentio/consent-manager), which is imported via the snippet and uses our pre-built React component under the hood.

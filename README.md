@@ -14,7 +14,7 @@ Analytics helps you measure your users, product, and business. It unlocks insigh
 3. **Explore your data** by creating metrics (for example, new signups, retention cohorts, and revenue generation).
     - The best Segment companies use retention cohorts to measure product market fit. Netflix has 70% paid retention after 12 months, 30% after 7 years.
 
-[Segment](https://segment.com) collects analytics data and allows you to send it to more than 250 apps (such as Google Analytics, Mixpanel, Optimizely, Facebook Ads, Slack, Sentry) just by flipping a switch. You only need one Segment code snippet, and you can turn integrations on and off at will, with no additional code. [Sign up with Segment today](https://app.segment.com/signup?ref=github&library=react).
+[Segment](https://segment.com?utm_source=github&utm_medium=click&utm_campaign=protos_react) collects analytics data and allows you to send it to more than 250 apps (such as Google Analytics, Mixpanel, Optimizely, Facebook Ads, Slack, Sentry) just by flipping a switch. You only need one Segment code snippet, and you can turn integrations on and off at will, with no additional code. [Sign up with Segment today](https://app.segment.com/signup?utm_source=github&utm_medium=click&utm_campaign=protos_react).
 
 ### Why?
 1. **Power all your analytics apps with the same data**. Instead of writing code to integrate all of your tools individually, send data to Segment, once.
@@ -30,66 +30,39 @@ Analytics helps you measure your users, product, and business. It unlocks insigh
     analytics.track('Order Completed', { price: 99.84 })
     ```
     Then, query the resulting data in SQL:
-
     ```sql
     select * from app.order_completed
     order by price desc
     ```
 
-
+### 🚀 Startup Program
+<div align="center">
+  <a href="https://segment.com/startups"><img src="https://user-images.githubusercontent.com/16131737/53128952-08d3d400-351b-11e9-9730-7da35adda781.png" /></a>
+</div>
+If you are part of a new startup  (&lt;$5M raised, &lt;2 years since founding), we just launched a new startup program for you. You can get a Segment Team plan  (up to <b>$25,000 value</b> in Segment credits) for free up to 2 years — <a href="https://segment.com/startups/">apply here</a>!
 
 # 🏃💨 Quickstart
+In this tutorial you'll add your write key to this React demo app to start sending data from the app to Segment, and from there to any of our destinations, using our [Analytics.js library](https://segment.com/docs/sources/website/analytics.js?utm_source=github&utm_medium=click&utm_campaign=protos_react). Once your app is set up, you'll be able to turn on new destinations with the click of a button! Ready to try it for yourself? Scroll down to the <a href="#demo">demo section</a> and run the app!
 
-In this tutorial you'll add your write key to this React demo app to start sending data from the app to Segment, and from there to any of our destinations, using our [Analytics.js library](https://segment.com/docs/sources/website/analytics.js/). Once your app is set up, you'll be able to turn on new destinations with the click of a button! Ready to try it for yourself? Scroll down to the <a href="#demo">demo section</a> and run the app!
-
-Start sending data from any [source](https://segment.com/docs/guides/general/what-is-a-source) and see events live in the Segment **debugger**:
+Start sending data from any [source](https://segment.com/docs/guides/general/what-is-a-source?utm_source=github&utm_medium=click&utm_campaign=protos_react) and see events live in the Segment **debugger**:
 
 <div align="center">
   <img src="https://user-images.githubusercontent.com/16131737/51933162-8a6d9180-23b5-11e9-909b-d7737591b09a.gif"/>
 </div>
 <br/>
 
-Once you have data being sent to Segment, forward this data to any of our 250+ [destinations](https://segment.com/docs/guides/general/what-is-a-destination):
+Once you have data being sent to Segment, forward this data to any of our 250+ [destinations](https://segment.com/docs/guides/general/what-is-a-destination?utm_source=github&utm_medium=click&utm_campaign=protos_react):
 
 <div align="center">
   <img src="https://user-images.githubusercontent.com/16131737/51859644-7b6edc80-22ec-11e9-8597-113a8b05ee07.gif"/>
 </div>
 
-## 📺 <span name="demo">Demo</span>
-To start with this demo app, follow the instructions below:
-
-1. [Sign up](https://app.segment.com/signup?ref=github&library=react) with Segment and edit the snippet in [index.html](https://github.com/segmentio/analytics-react/blob/master/public/index.html#L28) to replace `YOUR_WRITE_KEY` with your Segment **Write Key**.
-    > **Tip!** You can find your key in your project setup guide or settings in the Segment.
-
-    Your snippet will look something like the example below.
-
-    ```html
-    <script type="text/javascript">
-      !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t,e){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src="https://cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.1.0";
-      analytics.load("YOUR_WRITE_KEY");
-      }}();
-    </script>
-    ```
-
-2. From the command line, use `npm install` to install the dependencies, then `npm start` to run the app.
-
-    ```bash
-    npm install
-    npm start
-    ```
-
-3. Go to the Segment site, and in the Debugger look at the live events being triggered in your app. You should see the following:
-    - Page event: `Home` - When someone views the `home` page.
-    - Page event: `About` - When someone views the `about` page.
-    - Track event: `Learn React Link Clicked` - When someone clicks the "Learn React" link.
-
-Congrats! You're seeing live data from your demo React app in Segment! 🎉
-
 # 🔌 Installing on Your App
-Okay, the demo app is cool, but how do I get this in my own React app? Follow the steps below.
+How do you get this in your own React app? Follow the steps below.
 
 ## ✂️ Step 1: Copy the Snippet
-To install Segment in your own app, paste the snippet below into the `head` tag of your site. Then, [sign up](https://app.segment.com/signup?ref=github&library=react) with Segment and replace `YOUR_WRITE_KEY` in the snippet with your Segment project's **Write Key**.
+To install Segment in your own app first [sign up](https://app.segment.com/signup?utm_source=github&utm_medium=click&utm_campaign=protos_react) with Segment and locate your Segment project's **Write Key**.
+Then, copy and paste the snippet below into the `head` tag of your site. Replace `YOUR_WRITE_KEY` in the snippet below with your Segment project's write key.
 
 > **Tip!** You can find your write key in your Segment project setup guide or settings.
 
@@ -105,13 +78,12 @@ Now `window.analytics` is loaded and available to use throughout your app!
 
 In the next sections you'll build out your implementation to track page loads, to identify individual users of your app, and track the actions they take.
 
-
 ## 📱 Step 2: Track Page Views in an SPA
 > **Tip!** If your React application is **not** a Single Page application, you can uncomment the section in the above snippet and skip to Step 3.
 
 The snippet from Step 1 loads `Analytics.js` into your app and is ready to track page loads. However, most React apps are a Single Page App (SPA), and in SPAs clicking a link or a new tab does not reload the whole webpage.
 
-The `page` method lets you record page views on your website, along with optional information about the page being viewed. You can read more about how this works in the [page reference](https://segment.com/docs/sources/website/analytics.js/#page).
+The `page` method lets you record page views on your website, along with optional information about the page being viewed. You can read more about how this works in the [page reference](https://segment.com/docs/sources/website/analytics.js/#page?utm_source=github&utm_medium=click&utm_campaign=protos_react).
 
 This means that using `analytics.page()` in `index.html` on a SPA will not detect page component loads, and you'll need to simulate a page load some other way. You can use [react-router](https://reacttraining.com/react-router) and React's lifecycle methods to create `page` calls.
 
@@ -133,9 +105,8 @@ export default class HomePage extends Component {
 }
 ```
 
-
 ## 🔍 Step 3: Identify Users
-The `identify` method is how you tell Segment who the current user is. It includes a unique User ID and any optional traits you can pass on about them. You can read more about this in the [identify reference](https://segment.com/docs/sources/website/analytics.js/#identify).
+The `identify` method is how you tell Segment who the current user is. It includes a unique User ID and any optional traits you can pass on about them. You can read more about this in the [identify reference](https://segment.com/docs/sources/website/analytics.js/#identify?utm_source=github&utm_medium=click&utm_campaign=protos_react).
 
 **Note:** You don't need to call `identify` for anonymous visitors to your site. Segment automatically assigns them an `anonymousId`, so just calling `page` and `track` still works just fine without `identify`.
 
@@ -190,7 +161,7 @@ export default class IdentifyForm extends Component {
 > **Tip!** Other handlers might be better for other situations. You can see the [React docs on event handlers](https://reactjs.org/docs/handling-events.html) for more information.
 
 ## ⏰ Step 4: Track Actions
-The `track` method is how you tell Segment about which actions your users are performing on your site. Every action triggers what we call an "event", which can also have associated properties. It is important to figure out exactly what events you want to `track` instead of tracking anything and everything. A good way to do this is to build a [tracking plan](https://segment.com/docs/guides/sources/can-i-see-an-example-of-a-tracking-plan/). You can read more about `track` in the [track reference](https://segment.com/docs/sources/website/analytics.js/#track).
+The `track` method is how you tell Segment about which actions your users are performing on your site. Every action triggers what we call an "event", which can also have associated properties. It is important to figure out exactly what events you want to `track` instead of tracking anything and everything. A good way to do this is to build a [tracking plan](https://segment.com/docs/guides/sources/can-i-see-an-example-of-a-tracking-plan?utm_source=github&utm_medium=click&utm_campaign=protos_react). You can read more about `track` in the [track reference](https://segment.com/docs/sources/website/analytics.js/#track?utm_source=github&utm_medium=click&utm_campaign=protos_react).
 
 Here's what a call to `track` might look like when a user bookmarks an article:
 
@@ -237,7 +208,7 @@ export default class VideoPlayer extends Component {
   render() {
     return (
       <video autoplay>
-        <source src="https://www.youtube.com/watch?v=dQw4w9WgXcQ" type="video/mp4">
+        <source src="https://www.youtube.com/watch?v=dQw4w9WgXcQ" type="video/youtube">
       </video>
     );
   }
@@ -338,9 +309,9 @@ export default class User extends Component {
 }
 ```
 
-If you love typechecking, you'll love our open-source project [typewriter](https://github.com/segmentio/typewriter), which enforces a strongly-typed tracking spec via a JSON schema. Interested more in data standardization? Check out our [protocols product](https://segment.com/product/protocols) to improve data quality.
+If you love typechecking, you'll love our open-source project [typewriter](https://github.com/segmentio/typewriter), which enforces a strongly-typed tracking spec via a JSON schema. Interested more in data standardization? Check out our [protocols product](https://segment.com/product/protocols?utm_source=github&utm_medium=click&utm_campaign=protos_react) to improve data quality.
 
-You may wondering what you can be doing with all the raw data you are sending to Segment from your React app. With our [warehouses product](https://segment.com/product/warehouses), your analysts and data engineers can shift focus from data normalization and pipeline maintenance to providing insights for business teams. Having the ability to query data directly in SQL and layer on visualization tools can take your product to the next level.
+You may wondering what you can be doing with all the raw data you are sending to Segment from your React app. With our [warehouses product](https://segment.com/product/warehouses?utm_source=github&utm_medium=click&utm_campaign=protos_react), your analysts and data engineers can shift focus from data normalization and pipeline maintenance to providing insights for business teams. Having the ability to query data directly in SQL and layer on visualization tools can take your product to the next level.
 
 ## 💾 Warehouses
 A warehouse is a special subset of destinations where we load data in bulk at a regular intervals, inserting and updating events and objects while automatically adjusting their schema to fit the data you've sent to Segment. We do the heavy lifting of capturing, schematizing, and loading your user data into your data warehouse of choice.
@@ -351,8 +322,37 @@ Examples of data warehouses include Amazon Redshift, Google BigQuery, MySQL, and
   <img src="https://user-images.githubusercontent.com/16131737/51726992-d23f9200-201e-11e9-8b68-608ebaaa6c65.gif"/>
 </div>
 
+## 📺 <span name="demo">Demo</span>
+To start with this demo app, follow the instructions below:
+
+1. [Sign up](https://app.segment.com/signup?utm_source=github&utm_medium=click&utm_campaign=protos_react) with Segment and edit the snippet in [index.html](https://github.com/segmentio/analytics-react/blob/master/public/index.html#L28) to replace `YOUR_WRITE_KEY` with your Segment **Write Key**.
+    > **Tip!** You can find your key in your project setup guide or settings in the Segment.
+
+    Your snippet will look something like the example below.
+
+    ```html
+    <script type="text/javascript">
+      !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t,e){var n=document.createElement("script");n.type="text/javascript";n.async=!0;n.src="https://cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(n,a);analytics._loadOptions=e};analytics.SNIPPET_VERSION="4.1.0";
+      analytics.load("YOUR_WRITE_KEY");
+      }}();
+    </script>
+    ```
+
+2. From the command line, use `npm install` to install the dependencies, then `npm start` to run the app.
+    ```bash
+    npm install
+    npm start
+    ```
+
+3. Go to the Segment site, and in the Debugger look at the live events being triggered in your app. You should see the following:
+    - Page event: `Home` - When someone views the `home` page.
+    - Page event: `About` - When someone views the `about` page.
+    - Track event: `Learn React Link Clicked` - When someone clicks the "Learn React" link.
+
+Congrats! You're seeing live data from your demo React app in Segment! 🎉
+
 ## 🔒 What about privacy?
 Want to allow your visitors to control and customize their tracking preferences on your site? Integrate our [consent-manager](https://github.com/segmentio/consent-manager), which is imported via the snippet and uses our pre-built React component under the hood.
 
 ## 📝 Docs & Feedback
-Check out our full [Analytics.js reference](https://segment.com/docs/sources/website/analytics.js/) to see what else is possible, or read about the [Tracking API methods](https://segment.com/docs/sources/server/http/) to get a sense for the bigger picture. If you have any questions, or see anywhere we can improve our documentation, [let us know](https://segment.com/contact/)!
+Check out our full [Analytics.js reference](https://segment.com/docs/sources/website/analytics.js?utm_source=github&utm_medium=click&utm_campaign=protos_react) to see what else is possible, or read about the [Tracking API methods](https://segment.com/docs/sources/server/http?utm_source=github&utm_medium=click&utm_campaign=protos_react) to get a sense for the bigger picture. If you have any questions, or see anywhere we can improve our documentation, [let us know](https://segment.com/contact?utm_source=github&utm_medium=click&utm_campaign=protos_react)!

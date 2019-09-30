@@ -76,6 +76,14 @@ Then, copy and paste the snippet below into the `head` tag of your site. Replace
 ```
 Now `window.analytics` is loaded and available to use throughout your app!
 
+**Note**: If you are seeing compilation errors, you may need to declare the `windows` interface as a global:
+
+```JS
+declare global {
+  interface Window { analytics: any; }
+}
+```
+
 In the next sections you'll build out your implementation to track page loads, to identify individual users of your app, and track the actions they take.
 
 ## 📱 Step 2: Track Page Views in an SPA

@@ -42,7 +42,7 @@ Analytics helps you measure your users, product, and business. It unlocks insigh
 If you are part of a new startup  (&lt;$5M raised, &lt;2 years since founding), we just launched a new startup program for you. You can get a Segment Team plan  (up to <b>$25,000 value</b> in Segment credits) for free up to 2 years — <a href="https://segment.com/startups/">apply here</a>!
 
 # 🏃💨 Quickstart
-In this tutorial you'll add your write key to this React demo app to start sending data from the app to Segment, and from there to any of our destinations, using our [Analytics.js library](https://segment.com/docs/sources/website/analytics.js?utm_source=github&utm_medium=click&utm_campaign=protos_react). Once your app is set up, you'll be able to turn on new destinations with the click of a button! Ready to try it for yourself? Scroll down to the <a href="#demo">demo section</a> and run the app!
+In this tutorial you'll add your write key to this React demo app to start sending data from the app to Segment, and from there to any of our destinations, using our [Analytics.js library](https://segment.com/docs/connections/sources/catalog/libraries/website/javascript/?utm_source=github&utm_medium=click&utm_campaign=protos_react). Once your app is set up, you'll be able to turn on new destinations with the click of a button! Ready to try it for yourself? Scroll down to the <a href="#demo">demo section</a> and run the app!
 
 Start sending data from any [source](https://segment.com/docs/guides/general/what-is-a-source?utm_source=github&utm_medium=click&utm_campaign=protos_react) and see events live in the Segment **debugger**:
 
